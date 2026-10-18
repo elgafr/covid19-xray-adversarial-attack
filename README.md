@@ -13,10 +13,9 @@
 **Department of Informatics Engineering — Faculty of Engineering**  
 **Universitas Muhammadiyah Malang (UMM)**
 
-
 [![Journal DOI](https://img.shields.io/badge/JEEEMI_2026-10.35882%2Fjeeemi.v8i2.1506-00629B?style=for-the-badge)](https://doi.org/10.35882/jeeemi.v8i2.1506)
-[![Published PDF](https://img.shields.io/badge/Paper_PDF-JEEEMI_Vol.8_No.2-B31B1B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf)
-[![Notebook](https://img.shields.io/badge/Jupyter_Notebook-45_Cells-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](src/notebook/code3v3-hisyam_v4.ipynb)
+[![Published PDF](https://img.shields.io/badge/Paper_PDF-JEEEMI_Vol.8_No.2-B31B1B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](journal/journal-1506-Article%20Text-8082-1-10-20260428.pdf)
+[![Notebook](https://img.shields.io/badge/Jupyter_Notebook-45_Cells-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/code3v3-hisyam_v4.ipynb)
 
 </div>
 
@@ -61,13 +60,14 @@ This repository provides the complete source code, experimental execution logs, 
 
 ### Quick Resource Access
 
-| Resource | Description | Direct Link |
-|:---------|:------------|:-----------:|
-| **Documentation Website** | Full MkDocs Material site with rendered LaTeX equations, interactive tabs, and notebook view | [View Documentation](https://hisyam99.github.io/covid19-xray-adversarial-attack/) |
-| **Published Journal Paper** | Official 19-page JEEEMI article in PDF format | [Download PDF](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf) |
-| **Experimental Notebook** | Complete 45-cell PyTorch Jupyter Notebook (`code3v3-hisyam_v4.ipynb`) | [Open Notebook](src/notebook/code3v3-hisyam_v4.ipynb) |
-| **GPU Execution Log** | Raw console output of all evaluations, classification reports, and sensitivity tables | [View Log](results/full_hasil.txt) |
-| **Benchmark Dataset** | COVID-19 Radiography Database (21,165 CXR images, 4 classes) on Kaggle | [Kaggle Dataset](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database) |
+| Module / Resource | Path / Location | Description |
+|:------------------|:----------------|:------------|
+| **Published Journal Article** | [`journal/`](journal/journal-1506-Article%20Text-8082-1-10-20260428.pdf) | Official 19-page JEEEMI open-access article (PDF) and citation metadata |
+| **Experimental Notebook** | [`notebooks/`](notebooks/code3v3-hisyam_v4.ipynb) | Complete 45-cell PyTorch Jupyter Notebook (`code3v3-hisyam_v4.ipynb`) |
+| **Results & Visualizations** | [`results/`](results/) | Raw GPU execution log (`full_hasil.txt`) and all 54 physical PNG figures (`results/figures/`) |
+| **Dataset Specification** | [`datasets/`](datasets/) | COVID-19 Radiography Database (21,165 CXR images, 4 classes) structure and split guide |
+| **Model Checkpoint Guide** | [`models/`](models/) | Pretrained DenseNet-121 checkpoint specification (`best_densenet121_covid_4class.pth`) |
+| **Documentation Website** | [`docs/`](https://hisyam99.github.io/covid19-xray-adversarial-attack/) | Self-contained MkDocs Material site deployed at `hisyam99.github.io/covid19-xray-adversarial-attack` |
 
 ---
 
@@ -127,12 +127,12 @@ To prevent data leakage and preserve exact class ratios across partitions, the d
 | **Total** | — | **21,165** | **100.00%** | **16,932** | **2,116** | **2,117** | — |
 
 <div align="center">
-  <img src="images/fig2_dataset_representative_samples_stats.png" alt="Representative Samples COVID-19 Radiography Database" width="850">
+  <img src="results/figures/fig2_dataset_representative_samples_stats.png" alt="Representative Samples COVID-19 Radiography Database" width="850">
   <p><em>Figure 2 (Fig. 2 in JEEEMI): Representative samples from the COVID-19 Radiography Database (6 instances per category) illustrating native spatial resolution ($299 \times 299$) and radiometric pixel statistics ($\mu, \sigma$).</em></p>
 </div>
 
 <div align="center">
-  <img src="images/sample_dataset.png" alt="Sample Training Batch" width="750">
+  <img src="results/figures/sample_dataset.png" alt="Sample Training Batch" width="750">
   <p><em>Figure 3: Sample training mini-batch of 4 radiographs after inverse Z-score denormalization.</em></p>
 </div>
 
@@ -156,7 +156,7 @@ where $\mu_c = [0.485, \ 0.456, \ 0.406]$ and $\sigma_c = [0.229, \ 0.224, \ 0.2
 ## 5. System Architecture & Mathematical Methodology
 
 <div align="center">
-  <img src="images/architecture_diagram_v1.png" alt="System Architecture and Adversarial Attacks Pipeline" width="900">
+  <img src="results/figures/architecture_diagram_v1.png" alt="System Architecture and Adversarial Attacks Pipeline" width="900">
   <p><em>Figure 4 (Fig. 1 in JEEEMI): End-to-End System Architecture and Adversarial Attacks Pipeline comprising (1) Data Acquisition & Preprocessing, (2) DenseNet-121 Architecture, (3) White-Box Attack Engine (FGSM & PGD), (4) Quantitative Performance Evaluation, and (5) Grad-CAM Spatial Interpretability.</em></p>
 </div>
 
@@ -171,7 +171,7 @@ $$
 where $[x_0, x_1, \dots, x_{\ell-1}]$ denotes channel-wise concatenation of feature maps from layers $0$ to $\ell - 1$, and $H_\ell(\cdot)$ is a composite function of Batch Normalization (BN), ReLU, a $1 \times 1$ bottleneck convolution, and a $3 \times 3$ convolution with growth rate $k = 32$.
 
 <div align="center">
-  <img src="images/cropped_architecture_diagram.png" alt="DenseNet-121 Architecture Detail" width="850">
+  <img src="results/figures/cropped_architecture_diagram.png" alt="DenseNet-121 Architecture Detail" width="850">
   <p><em>Figure 5: Detailed structural breakdown of DenseNet-121 with 4 Dense Blocks, 3 Transition Layers, Global Average Pooling, and the modified 4-class Linear Classification Head.</em></p>
 </div>
 
@@ -210,7 +210,7 @@ $$
 In normalized input space, the perturbation step is scaled channel-wise by the ImageNet standard deviation tensor ($\epsilon_{\text{norm}} = \epsilon / \sigma_c$). Because FGSM takes a single step correlated with raw image gradients, its perturbation concentrates along high-frequency anatomical boundaries (ribs and clavicles), creating structured *"edge artifacts"*.
 
 <div align="center">
-  <img src="images/fig3_ilustrasi_fgsm.png" alt="Illustration of Fast Gradient Sign Method (FGSM)" width="850">
+  <img src="results/figures/fig3_ilustrasi_fgsm.png" alt="Illustration of Fast Gradient Sign Method (FGSM)" width="850">
   <p><em>Figure 6 (Fig. 3 in JEEEMI): Illustration of the Single-Step Fast Gradient Sign Method (FGSM) Perturbation Generation Pipeline.</em></p>
 </div>
 
@@ -231,7 +231,7 @@ $$
 strictly exceeds the diameter of the $L_\infty$-ball ($2\epsilon$), ensuring complete spatial coverage of the feasible perturbation volume and preventing false robustness (*gradient masking*).
 
 <div align="center">
-  <img src="images/fig4_ilustrasi_pgd.png" alt="Illustration of Projected Gradient Descent (PGD)" width="850">
+  <img src="results/figures/fig4_ilustrasi_pgd.png" alt="Illustration of Projected Gradient Descent (PGD)" width="850">
   <p><em>Figure 7 (Fig. 4 in JEEEMI): Illustration of Iterative Projected Gradient Descent (PGD) Optimization with $\epsilon$-Ball Projection.</em></p>
 </div>
 
@@ -268,14 +268,14 @@ $$
 During fine-tuning, training and validation loss converged smoothly with minimal oscillation, triggering Early Stopping (`patience = 5`) at Epoch 9 after validation accuracy peaked at Epoch 4 (saved to `best_densenet121_covid_4class.pth`).
 
 <div align="center">
-  <img src="images/training_validation_acc_loss_densenet121.png" alt="Training and Validation Accuracy and Loss" width="850">
+  <img src="results/figures/training_validation_acc_loss_densenet121.png" alt="Training and Validation Accuracy and Loss" width="850">
   <p><em>Figure 8 (Fig. 5 in JEEEMI): Training and Validation (a) Accuracy and (b) Loss convergence curves for DenseNet-121.</em></p>
 </div>
 
 On the unseen clean test set ($N = 2,117$), the model achieved a baseline accuracy of **95.42%** (95% CI: **94.53% – 96.31%**, $2,020 / 2,117$ correct predictions) and an average prediction confidence of **96.05%**.
 
 <div align="center">
-  <img src="images/cm_original_test_set.png" alt="Confusion Matrix on Original Dataset" width="520">
+  <img src="results/figures/cm_original_test_set.png" alt="Confusion Matrix on Original Dataset" width="520">
   <p><em>Figure 9 (Fig. 6 in JEEEMI): Confusion Matrix on the Original Clean Test Set ($N = 2,117$, Accuracy = 95.42%).</em></p>
 </div>
 
@@ -312,7 +312,7 @@ Subjecting the test set ($N = 2,117$) to sub-pixel FGSM and PGD perturbations at
 | **PGD Attack** | `0.1/255` (`0.000392`) | **25.32%** | $23.42\% - 27.12\%$ | **74.68%** | **85.42%** | $\chi^2 = 1483.00 \ (p \ll 0.001)$ |
 
 <div align="center">
-  <img src="images/cm_fgsm_vs_pgd_0.1.png" alt="Side-by-Side Confusion Matrices FGSM vs PGD" width="850">
+  <img src="results/figures/cm_fgsm_vs_pgd_0.1.png" alt="Side-by-Side Confusion Matrices FGSM vs PGD" width="850">
   <p><em>Figure 10: Side-by-side Confusion Matrices for FGSM (left, 59.28% accuracy) and PGD (right, 25.32% accuracy) at $\epsilon = 0.1/255$.</em></p>
 </div>
 
@@ -320,11 +320,11 @@ Subjecting the test set ($N = 2,117$) to sub-pixel FGSM and PGD perturbations at
 <table>
 <tr>
 <td align="center" width="50%">
-  <img src="images/fig7_cm_fgsm_detailed_percentage.png" alt="FGSM Confusion Matrix Detailed" width="420">
+  <img src="results/figures/fig7_cm_fgsm_detailed_percentage.png" alt="FGSM Confusion Matrix Detailed" width="420">
   <p><em>Figure 11 (Fig. 7 in JEEEMI): Misclassification trends under FGSM ($\epsilon = 0.1/255$, Accuracy = 59.28%) with sample counts and class-normalized percentages.</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/fig8_cm_pgd_detailed_percentage.png" alt="PGD Confusion Matrix Detailed" width="420">
+  <img src="results/figures/fig8_cm_pgd_detailed_percentage.png" alt="PGD Confusion Matrix Detailed" width="420">
   <p><em>Figure 12 (Fig. 8 in JEEEMI): Misclassification trends under PGD ($\epsilon = 0.1/255$, Accuracy = 25.32%), highlighting near-total collapse in Lung Opacity (11.3% correct) and COVID-19 (18.0% correct).</em></p>
 </td>
 </tr>
@@ -332,7 +332,7 @@ Subjecting the test set ($N = 2,117$) to sub-pixel FGSM and PGD perturbations at
 </div>
 
 <div align="center">
-  <img src="images/SAMPEL_PREDIKSI_VISUAL_(Clean_vs_FGSM_vs_PGD)_0.1.png" alt="Sample Visual Predictions Clean vs FGSM vs PGD" width="780">
+  <img src="results/figures/SAMPEL_PREDIKSI_VISUAL_(Clean_vs_FGSM_vs_PGD)_0.1.png" alt="Sample Visual Predictions Clean vs FGSM vs PGD" width="780">
   <p><em>Figure 13: Visual comparison of Clean, FGSM ($\epsilon = 0.1/255$), and PGD ($\epsilon = 0.1/255$) radiographs. Although the images are visually identical to the human eye, the model misclassifies perturbed samples with high confidence.</em></p>
 </div>
 
@@ -343,7 +343,7 @@ Subjecting the test set ($N = 2,117$) to sub-pixel FGSM and PGD perturbations at
 To identify the exact breakdown threshold of the model, fine-grained sensitivity sweeps were conducted across sub-pixel epsilon intervals ($\epsilon < 1/255$).
 
 <div align="center">
-  <img src="images/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png" alt="Robustness Profile Sub-Pixel and Micro Noise" width="820">
+  <img src="results/figures/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png" alt="Robustness Profile Sub-Pixel and Micro Noise" width="820">
   <p><em>Figure 14 (Fig. 11 in JEEEMI): Robustness Profile comparing accuracy degradation across sub-pixel and micro noise levels for FGSM and PGD relative to the 95.42% clean baseline.</em></p>
 </div>
 
@@ -380,11 +380,11 @@ To identify the exact breakdown threshold of the model, fine-grained sensitivity
 <table>
 <tr>
 <td align="center" width="50%">
-  <img src="images/analisis_batas_toleransi_fgsm.png" alt="FGSM Sub-Pixel Tolerance Curve" width="420">
+  <img src="results/figures/analisis_batas_toleransi_fgsm.png" alt="FGSM Sub-Pixel Tolerance Curve" width="420">
   <p><em>Figure 15: FGSM sub-pixel tolerance curve ($0.1/255 - 0.9/255$) illustrating the linear-step plateau around 9.02% accuracy.</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/model_sensitivity_pgd_0.01-0.3_255.png" alt="PGD Sensitivity Curve 0.01-0.3" width="420">
+  <img src="results/figures/model_sensitivity_pgd_0.01-0.3_255.png" alt="PGD Sensitivity Curve 0.01-0.3" width="420">
   <p><em>Figure 16: PGD low-range sensitivity curve ($0.01/255 - 0.3/255$) illustrating exponential collapse to 0.05%.</em></p>
 </td>
 </tr>
@@ -398,7 +398,7 @@ To identify the exact breakdown threshold of the model, fine-grained sensitivity
 To uncover the internal mechanism driving metric collapse, **Grad-CAM** heatmaps were extracted from `model.features[-1]` and compared across Clean, FGSM, and PGD conditions using **Cosine Similarity ($S_c$, Equation 12)**.
 
 <div align="center">
-  <img src="images/Visualisasi_Grad-CAM_(Clean_vs_FGSM_vs_PGD).png" alt="Complete Grad-CAM Comparison Clean vs FGSM vs PGD" width="900">
+  <img src="results/figures/Visualisasi_Grad-CAM_(Clean_vs_FGSM_vs_PGD).png" alt="Complete Grad-CAM Comparison Clean vs FGSM vs PGD" width="900">
   <p><em>Figure 17: Representative $4 \times 6$ Grad-CAM comparison across all four diagnostic classes under Clean, FGSM ($\epsilon = 0.1/255$), and PGD ($\epsilon = 0.1/255$) conditions.</em></p>
 </div>
 
@@ -416,21 +416,21 @@ To uncover the internal mechanism driving metric collapse, **Grad-CAM** heatmaps
 <table>
 <tr>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_pgd_kelas_normal.png" alt="PGD Progression Normal" width="440">
+  <img src="results/figures/analisis_progresi_pgd_kelas_normal.png" alt="PGD Progression Normal" width="440">
   <p><em>Figure 18a (Fig. 9a in JEEEMI): PGD progression on Normal class ($\epsilon = 0.01/255 \rightarrow 0.1/255$).</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_pgd_kelas_lung_opacity.png" alt="PGD Progression Lung Opacity" width="440">
+  <img src="results/figures/analisis_progresi_pgd_kelas_lung_opacity.png" alt="PGD Progression Lung Opacity" width="440">
   <p><em>Figure 18b (Fig. 9b in JEEEMI): PGD progression on Lung Opacity class ($\epsilon = 0.01/255 \rightarrow 0.1/255$).</em></p>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_pgd_kelas_covid.png" alt="PGD Progression COVID-19" width="440">
+  <img src="results/figures/analisis_progresi_pgd_kelas_covid.png" alt="PGD Progression COVID-19" width="440">
   <p><em>Figure 18c (Fig. 9c in JEEEMI): PGD progression on COVID-19 class ($\epsilon = 0.01/255 \rightarrow 0.1/255$).</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_pgd_kelas_viral_pneumonia.png" alt="PGD Progression Viral Pneumonia" width="440">
+  <img src="results/figures/analisis_progresi_pgd_kelas_viral_pneumonia.png" alt="PGD Progression Viral Pneumonia" width="440">
   <p><em>Figure 18d (Fig. 9d in JEEEMI): PGD progression on Viral Pneumonia class ($\epsilon = 0.01/255 \rightarrow 0.1/255$).</em></p>
 </td>
 </tr>
@@ -443,21 +443,21 @@ To uncover the internal mechanism driving metric collapse, **Grad-CAM** heatmaps
 <table>
 <tr>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_normal.png" alt="FGSM Progression Normal" width="440">
+  <img src="results/figures/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_normal.png" alt="FGSM Progression Normal" width="440">
   <p><em>Figure 19a (Fig. 10a in JEEEMI): FGSM Auto-Enhanced Noise progression on Normal class.</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_lung_opacity.png" alt="FGSM Progression Lung Opacity" width="440">
+  <img src="results/figures/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_lung_opacity.png" alt="FGSM Progression Lung Opacity" width="440">
   <p><em>Figure 19b (Fig. 10b in JEEEMI): FGSM Auto-Enhanced Noise progression on Lung Opacity class.</em></p>
 </td>
 </tr>
 <tr>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_covid.png" alt="FGSM Progression COVID-19" width="440">
+  <img src="results/figures/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_covid.png" alt="FGSM Progression COVID-19" width="440">
   <p><em>Figure 19c (Fig. 10c in JEEEMI): FGSM Auto-Enhanced Noise progression on COVID-19 class.</em></p>
 </td>
 <td align="center" width="50%">
-  <img src="images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_viral_pneumonia.png" alt="FGSM Progression Viral Pneumonia" width="440">
+  <img src="results/figures/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_viral_pneumonia.png" alt="FGSM Progression Viral Pneumonia" width="440">
   <p><em>Figure 19d (Fig. 10d in JEEEMI): FGSM Auto-Enhanced Noise progression on Viral Pneumonia class.</em></p>
 </td>
 </tr>
@@ -508,82 +508,49 @@ covid19-xray-adversarial-attack/
 ├── .github/
 │   └── workflows/
 │       └── docs.yml                    # Automated CI/CD workflow for GitHub Pages deployment
-├── datasets/
-│   └── README.md                       # COVID-19 Radiography Dataset specification & instructions
-├── docs/                               # MkDocs Material documentation source tree
-│   ├── about/                          # Clinical background, objectives, scope & author biographies
-│   │   ├── index.md
-│   │   ├── objectives.md
-│   │   ├── overview.md
-│   │   └── team.md
-│   ├── conclusions/                    # Summary, empirical findings, defenses & future directions
-│   │   ├── findings.md
-│   │   ├── future-work.md
-│   │   ├── index.md
-│   │   ├── recommendations.md
-│   │   └── summary.md
-│   ├── dataset/                        # Dataset overview, statistics, preprocessing & citation
-│   │   ├── citation.md
-│   │   ├── index.md
-│   │   ├── introduction.md
-│   │   ├── preprocessing.md
-│   │   └── statistics.md
-│   ├── experiments/                    # Training convergence, hyperparameters & execution summary
-│   │   ├── hyperparameters.md
-│   │   ├── index.md
-│   │   ├── results.md
-│   │   └── training.md
-│   ├── images/                         # Complete collection of 54 experimental figures & plots
-│   ├── implementation/                 # Setup guide, code walkthrough, deployment & synced notebook
-│   │   ├── code3v3-hisyam_v4.ipynb
-│   │   ├── deployment.md
-│   │   ├── index.md
-│   │   ├── installation.md
-│   │   └── notebook.md
-│   ├── javascripts/
-│   │   └── mathjax.js                  # MathJax 3 configuration for LaTeX Equations (1)–(12)
-│   ├── methodology/                    # Mathematical formulations of DenseNet-121, FGSM, PGD & XAI
-│   │   ├── adversarial.md
-│   │   ├── densenet.md
-│   │   ├── index.md
-│   │   ├── metrics.md
-│   │   ├── overview.md
-│   │   ├── preprocessing.md
-│   │   └── training.md
-│   ├── overrides/
-│   │   └── main.html                   # Custom Material theme announcement banner & notebook download button
-│   ├── publications/
-│   │   └── journal-1506-Article Text-8082-1-10-20260428.pdf  # Published JEEEMI article
-│   ├── results/                        # Quantitative comparisons, sub-pixel results, gallery & error analysis
-│   │   ├── attack-results.md
-│   │   ├── comparison.md
-│   │   ├── error-analysis.md
-│   │   ├── index.md
-│   │   ├── overview.md
-│   │   └── visualizations.md
-│   ├── stylesheets/
-│   │   └── extra.css                   # Custom CSS for cards, tables, and light/dark Jupyter rendering
-│   ├── index.md                        # Documentation home page
-│   ├── references.md                   # Complete bibliography (53 references)
-│   └── tags.md                         # Tag index
-├── images -> docs/images               # Root symlink to documentation image assets
-├── models/
-│   └── README.md                       # Model checkpoint specification (best_densenet121_covid_4class.pth)
-├── publications -> docs/publications   # Root symlink to published journal article PDF
-├── results/
-│   └── full_hasil.txt                  # Complete console output log from GPU execution
-├── src/
-│   └── notebook/
-│       └── code3v3-hisyam_v4.ipynb     # Primary experimental Jupyter Notebook (45 cells, Parts 1–15)
-├── .gitattributes                      # Git LFS configuration for model weights (*.pth)
-├── mkdocs.yml                          # MkDocs Material configuration
-├── requirements-docs.txt               # Documentation-only dependencies
-├── requirements.txt                    # Full Python dependencies (PyTorch, Grad-CAM, MkDocs)
-├── sync_docs.sh                        # Synchronization script for notebook integration
-└── README.md                           # Comprehensive repository documentation
+├── datasets/                           # [1] Dataset Specification & Partitioning Guide
+│   └── README.md
+├── journal/                            # [2] Published JEEEMI Journal Paper & Citation Metadata
+│   ├── README.md
+│   └── journal-1506-Article Text-8082-1-10-20260428.pdf
+├── models/                             # [3] Pretrained DenseNet-121 Checkpoint Specification
+│   └── README.md
+├── notebooks/                          # [4] Primary Experimental Jupyter Notebook (45 Cells)
+│   ├── README.md
+│   └── code3v3-hisyam_v4.ipynb
+├── results/                            # [5] Experimental Outputs, GPU Logs & All 54 Figures
+│   ├── README.md
+│   ├── full_hasil.txt                  # Complete console output log from CUDA GPU evaluation
+│   └── figures/                        # Physical directory containing all 54 PNG figures
+│       └── (*.png)
+├── docs/                               # [6] Self-Contained Documentation Website Module (MkDocs)
+│   ├── README.md
+│   ├── mkdocs.yml                      # MkDocs configuration (docs_dir: site_docs)
+│   ├── requirements.txt                # Documentation build dependencies
+│   ├── sync_docs.sh                    # Synchronization script for notebooks, figures, and paper
+│   └── site_docs/                      # Documentation Markdown source tree & static assets
+│       ├── about/
+│       ├── conclusions/
+│       ├── dataset/
+│       ├── experiments/
+│       ├── images/                     # Physical PNG image assets for MkDocs site
+│       ├── implementation/
+│       ├── javascripts/
+│       ├── methodology/
+│       ├── overrides/
+│       ├── publications/
+│       ├── results/
+│       ├── stylesheets/
+│       ├── index.md
+│       ├── references.md
+│       └── tags.md
+├── .gitattributes                      # Git LFS tracking for model checkpoints (*.pth)
+├── .gitignore                          # Git ignore rules for build artifacts and caches
+├── requirements.txt                    # Core Deep Learning & research Python dependencies
+└── README.md                           # Main repository documentation
 ```
 
-### 9.3 Map of the 45 Cells in `src/notebook/code3v3-hisyam_v4.ipynb`
+### 9.3 Map of the 45 Cells in `notebooks/code3v3-hisyam_v4.ipynb`
 
 | Notebook Section | Cells | Summary of Implementation |
 |:-----------------|:-----:|:--------------------------|
@@ -600,7 +567,7 @@ covid19-xray-adversarial-attack/
 
 ## 10. Installation, Reproduction & Documentation Guide
 
-### 10.1 Local Environment Setup
+### 10.1 Local Research Environment Setup
 
 ```bash
 # 1. Clone the repository
@@ -611,7 +578,7 @@ cd covid19-xray-adversarial-attack
 python3 -m venv venv
 source venv/bin/activate
 
-# 3. Install dependencies
+# 3. Install core Deep Learning dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -620,22 +587,25 @@ pip install -r requirements.txt
 
 1. Open [Kaggle Notebooks](https://www.kaggle.com/code) or Google Colab with a **CUDA GPU accelerator** (NVIDIA Tesla T4 or P100).
 2. Mount the **[COVID-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database)** at `/kaggle/input/covid19-radiography-database/COVID-19_Radiography_Dataset`.
-3. Upload `src/notebook/code3v3-hisyam_v4.ipynb` and run all cells sequentially.
+3. Upload `notebooks/code3v3-hisyam_v4.ipynb` and run all cells sequentially.
 
-### 10.3 Serving & Building the MkDocs Documentation Site
+### 10.3 Serving & Building the Documentation Website (`docs/`)
 
 ```bash
-# Synchronize the latest notebook into docs/implementation/
-./sync_docs.sh
+# Install documentation dependencies
+pip install -r docs/requirements.txt
+
+# Synchronize artifacts into docs/site_docs/
+./docs/sync_docs.sh
 
 # Start the live-reloading local documentation server
-mkdocs serve --dev-addr 127.0.0.1:8000
+mkdocs serve -f docs/mkdocs.yml --dev-addr 127.0.0.1:8000
 ```
 
-Access the local site at `http://127.0.0.1:8000/covid19-xray-adversarial-attack/`. To verify a strict production build:
+Access the local site at `http://127.0.0.1:8000/covid19-xray-adversarial-attack/`. To run a strict production build:
 
 ```bash
-mkdocs build --strict
+mkdocs build -f docs/mkdocs.yml --strict -d ../site
 ```
 
 ---
@@ -670,7 +640,7 @@ If you find this research, codebase, or experimental analysis useful in your wor
 4. **Zhang, J., et al.** (2024). "Revisiting the Trustworthiness of Saliency Methods in Radiology AI," *Radiology: Artificial Intelligence*, vol. 6, no. 1, p. e220221. DOI: `10.1148/ryai.220221`.
 5. **Sim, J. H., & Song, H. M.** (2025). "A Generalized Framework for Adversarial Attack Detection and Prevention Using Grad-CAM and Clustering Techniques," *Systems*, vol. 13, no. 2, p. 88. DOI: `10.3390/systems13020088`.
 
-*(The complete list of 53 references is available in [`docs/references.md`](docs/references.md)).*
+*(The complete list of 53 references is available in [`docs/site_docs/references.md`](docs/site_docs/references.md)).*
 
 ### 11.3 License
 

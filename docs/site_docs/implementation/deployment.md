@@ -1,6 +1,6 @@
 # Documentation Build & GitHub Pages Deployment
 
-This documentation site is built with **Material for MkDocs** using the latest stable versions of its core packages and plugins:
+This documentation site is encapsulated inside the `docs/` module and built with **Material for MkDocs** using the latest stable versions of its core packages and plugins:
 
 | Component / Plugin | Python Package | Version | Primary Role |
 |:-------------------|:---------------|:-------:|:-------------|
@@ -14,12 +14,12 @@ This documentation site is built with **Material for MkDocs** using the latest s
 
 ---
 
-## 1. Synchronize Notebook (`sync_docs.sh`)
+## 1. Synchronize Research Artifacts (`docs/sync_docs.sh`)
 
-Before serving or building the documentation, run `./sync_docs.sh` to copy the latest notebook from `src/notebook/code3v3-hisyam_v4.ipynb` into `docs/implementation/`:
+Before serving or building the documentation, run `./docs/sync_docs.sh` to synchronize the latest notebook (`notebooks/`), figures (`results/figures/`), and journal PDF (`journal/`) into `docs/site_docs/`:
 
 ```bash
-./sync_docs.sh
+./docs/sync_docs.sh
 ```
 
 ---
@@ -28,7 +28,7 @@ Before serving or building the documentation, run `./sync_docs.sh` to copy the l
 
 ```bash
 source venv/bin/activate
-mkdocs serve --dev-addr 127.0.0.1:8000
+mkdocs serve -f docs/mkdocs.yml --dev-addr 127.0.0.1:8000
 ```
 
 Open `http://127.0.0.1:8000/covid19-xray-adversarial-attack/` in your web browser.
@@ -38,7 +38,7 @@ Open `http://127.0.0.1:8000/covid19-xray-adversarial-attack/` in your web browse
 ## 3. Build Static Production Site (`mkdocs build`)
 
 ```bash
-mkdocs build --strict
+mkdocs build -f docs/mkdocs.yml --strict -d ../site
 ```
 
 The static HTML/CSS/JS site is generated in the `site/` directory.
@@ -47,12 +47,12 @@ The static HTML/CSS/JS site is generated in the `site/` directory.
 
 ## 4. Automated GitHub Actions CI/CD (`.github/workflows/docs.yml`)
 
-On every push to the `main` or `master` branch modifying `docs/**`, `src/notebook/**`, `mkdocs.yml`, or `requirements.txt`, the GitHub Actions workflow automatically:
+On every push to the `main` or `master` branch modifying `docs/**`, `notebooks/**`, `results/figures/**`, or `journal/**`, the GitHub Actions workflow automatically:
 
 1. Provisions an Ubuntu runner with Python `3.11`.
-2. Installs all dependencies from `requirements.txt`.
-3. Synchronizes `src/notebook/*.ipynb` into `docs/implementation/`.
-4. Executes `mkdocs build --strict --verbose` with `CI=true`.
+2. Installs documentation dependencies from `docs/requirements.txt`.
+3. Synchronizes research artifacts via `./docs/sync_docs.sh`.
+4. Executes `mkdocs build -f docs/mkdocs.yml --strict --verbose -d ../site` with `CI=true`.
 5. Uploads the `./site` artifact and deploys it to **GitHub Pages** (`https://hisyam99.github.io/covid19-xray-adversarial-attack/`).
 
 ---

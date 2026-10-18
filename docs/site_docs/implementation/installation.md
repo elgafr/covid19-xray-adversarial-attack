@@ -19,7 +19,7 @@ cd covid19-xray-adversarial-attack
 
 ## 2. Install Python Dependencies
 
-### A. Full Installation (Deep Learning Experiments + Documentation)
+### A. Core Deep Learning & Research Environment (`requirements.txt`)
 
 ```bash
 python3 -m venv venv
@@ -29,10 +29,10 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Contents of `requirements.txt`:
+Contents of root `requirements.txt`:
 
 ```txt
-# Core ML
+# Core Deep Learning & Computer Vision
 torch>=2.5.0
 torchvision>=0.20.0
 numpy>=2.0.0
@@ -43,30 +43,20 @@ tqdm>=4.66.0
 matplotlib>=3.9.0
 seaborn>=0.13.0
 
-# Explainability
+# Explainable AI (Grad-CAM)
 grad-cam>=1.5.0
 
-# Notebook
+# Interactive Notebook Environment
 jupyter>=1.1.0
 ipykernel>=6.29.0
-
-# Documentation dependencies (optional)
-mkdocs>=1.6.1
-mkdocs-material>=9.7.7
-mkdocs-jupyter>=0.26.3
-mkdocs-git-revision-date-localized-plugin>=1.6.0
-mkdocs-glightbox>=0.5.2
-mkdocs-minify-plugin>=0.8.0
-pymdown-extensions>=12.3
-jupytext>=1.16.0
 ```
 
-### B. Documentation-Only Installation (`requirements-docs.txt`)
+### B. Documentation Website Dependencies (`docs/requirements.txt`)
 
-To build or preview the MkDocs documentation website without installing PyTorch:
+To build or preview the MkDocs documentation website:
 
 ```bash
-pip install -r requirements-docs.txt
+pip install -r docs/requirements.txt
 ```
 
 ---
@@ -78,7 +68,7 @@ pip install -r requirements-docs.txt
    ```text
    /kaggle/input/covid19-radiography-database/COVID-19_Radiography_Dataset
    ```
-3. Upload `src/notebook/code3v3-hisyam_v4.ipynb` (and optionally place `best_densenet121_covid_4class.pth` in `/kaggle/working/`).
+3. Upload `notebooks/code3v3-hisyam_v4.ipynb` (and optionally place `best_densenet121_covid_4class.pth` in `/kaggle/working/`).
 4. Execute all cells sequentially. The `grad-cam` package is installed automatically in `Cell 19` (`!pip install grad-cam`).
 
 ---

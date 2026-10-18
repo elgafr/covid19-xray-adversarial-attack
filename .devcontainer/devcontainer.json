@@ -5,7 +5,7 @@
     "codespaces": {
       "openFiles": [
         "README.md",
-        "src/notebook/code3v3-hisyam_v4.ipynb"
+        "notebooks/code3v3-hisyam_v4.ipynb"
       ]
     },
     "vscode": {
@@ -17,7 +17,7 @@
       ]
     }
   },
-  "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo 'Packages installed and requirements met'",
+  "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; [ -f docs/requirements.txt ] && pip3 install --user -r docs/requirements.txt; echo 'Packages installed and requirements met'",
   "portsAttributes": {
     "8000": {
       "label": "MkDocs Documentation",

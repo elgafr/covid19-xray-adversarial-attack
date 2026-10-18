@@ -7,9 +7,9 @@ on:
       - master
     paths:
       - 'docs/**'
-      - 'src/notebook/**'
-      - 'mkdocs.yml'
-      - 'requirements.txt'
+      - 'notebooks/**'
+      - 'results/figures/**'
+      - 'journal/**'
       - '.github/workflows/docs*.yml'
   workflow_dispatch:
 
@@ -38,21 +38,19 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install documentation dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r docs/requirements.txt
 
-      - name: Sync notebooks and source files
+      - name: Sync notebooks, figures, and journal artifacts
         run: |
-          echo "Syncing notebooks from src/ to docs/implementation/..."
-          cp -v src/notebook/*.ipynb docs/implementation/ || echo "No notebooks to sync"
-          echo "Sync complete."
+          chmod +x docs/sync_docs.sh
+          ./docs/sync_docs.sh
 
       - name: Build documentation
         run: |
-          echo "Building MkDocs site with Jupyter integration..."
-          mkdocs build --strict --verbose
+          mkdocs build -f docs/mkdocs.yml --strict --verbose -d ../site
         env:
           CI: true
 

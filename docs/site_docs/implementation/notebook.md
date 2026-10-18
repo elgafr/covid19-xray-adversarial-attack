@@ -1,6 +1,6 @@
 # Jupyter Notebook Guide & Code Walkthrough
 
-All experimental pipelines in this study are consolidated within a single self-contained Jupyter Notebook: **`src/notebook/code3v3-hisyam_v4.ipynb`** (**45 cells** spanning 15 structured experimental sections).
+All experimental pipelines in this study are consolidated within a single self-contained Jupyter Notebook: **`notebooks/code3v3-hisyam_v4.ipynb`** (**45 cells** spanning 15 structured experimental sections).
 
 [:fontawesome-solid-book-open: **Open Full Rendered Notebook (`code3v3-hisyam_v4.ipynb`)**](code3v3-hisyam_v4.ipynb){ .md-button .md-button--primary }
 
