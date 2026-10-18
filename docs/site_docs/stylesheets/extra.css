@@ -1,77 +1,159 @@
-/* Custom Styles for MkDocs Material Theme */
+/* Custom Styles for MkDocs Material Theme — Clean Solid & Fully Rounded UI */
 
-/* Enhanced grid cards */
-.md-typeset .grid.cards>ol>li,
-.md-typeset .grid.cards>ul>li {
+/* ========================================
+   1. Solid Announcement Bar (No Gradient)
+   ======================================== */
+.md-announce {
+    background-color: var(--md-primary-fg-color--dark, #303f9f) !important;
+    color: var(--md-primary-bg-color, #ffffff) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    padding: 0.35rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-announce {
+    background-color: #1e222a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-announce__inner {
+    text-align: center;
+}
+
+.md-announce a {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.md-announce a:hover {
+    opacity: 0.85 !important;
+}
+
+/* ========================================
+   2. Precision Fully-Rounded Pill Buttons
+   ======================================== */
+.md-typeset .md-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    border-radius: 9999px !important;
+    padding: 0.58rem 1.35rem !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.01em !important;
+    border: 1.5px solid var(--md-primary-fg-color) !important;
+    background-color: transparent !important;
+    color: var(--md-primary-fg-color) !important;
+    box-shadow: none !important;
+    margin: 0.25rem 0.3rem !important;
+    vertical-align: middle !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease !important;
+}
+
+.md-typeset .md-button strong {
+    font-weight: 600 !important;
+    color: inherit !important;
+}
+
+.md-typeset .md-button .twemoji,
+.md-typeset .md-button svg {
+    width: 1.05em !important;
+    height: 1.05em !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    fill: currentColor !important;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+    background-color: var(--md-primary-fg-color) !important;
+    border-color: var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Primary Solid Button (No Gradient) */
+.md-typeset .md-button--primary {
+    background-color: var(--md-primary-fg-color) !important;
+    border: 1.5px solid var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+    background-color: var(--md-accent-fg-color) !important;
+    border-color: var(--md-accent-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* ========================================
+   3. Grid Cards, Admonitions, Tables & Tags
+   ======================================== */
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid.cards > ul > li {
     border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid.cards > ul > li:hover {
+    border-color: var(--md-primary-fg-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+    border-left-width: 0.35rem;
     border-radius: 0.5rem;
-    transition: all 0.3s ease;
 }
 
-.md-typeset .grid.cards>ol>li:hover,
-.md-typeset .grid.cards>ul>li:hover {
-    border-color: var(--md-accent-fg-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-/* Better admonition styling */
-.md-typeset .admonition {
-    border-left-width: 0.4rem;
-    border-radius: 0.3rem;
-}
-
-/* Custom button styling */
-.md-button {
-    border-radius: 0.3rem;
-    transition: all 0.2s ease;
-}
-
-.md-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Code block improvements */
 .md-typeset code {
-    border-radius: 0.2rem;
-    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.35rem;
 }
 
-/* Table styling */
 .md-typeset table:not([class]) {
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 
-/* Mermaid diagram styling */
 .mermaid {
     background-color: transparent;
 }
 
-/* Enhanced images */
 .md-typeset img {
     border-radius: 0.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Better spacing for content */
 .md-content__inner {
     padding-bottom: 3rem;
 }
 
-/* Custom badge styling */
+/* Fully rounded tag pills */
 .md-typeset a.md-tag {
-    border-radius: 1rem;
+    border-radius: 9999px !important;
     font-weight: 500;
+    padding: 0.15rem 0.75rem;
 }
 
-/* Enhanced navigation */
 .md-nav__link--active {
     font-weight: 600;
 }
 
-/* Custom highlight for important notes */
 .md-typeset .admonition.success,
 .md-typeset .admonition.check,
 .md-typeset .admonition.done {
@@ -90,109 +172,42 @@
     border-left-color: #ff9100;
 }
 
-/* Better code block line numbers */
 .md-typeset .highlight .linenos {
     user-select: none;
 }
 
-/* Smooth scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom emoji size */
 .md-typeset .twemoji {
     vertical-align: text-bottom;
 }
 
-/* Enhanced tabs */
 .md-typeset .tabbed-set {
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 
-/* Footer styling */
 .md-footer-meta {
     background-color: var(--md-footer-bg-color);
 }
 
-/* Better print styles */
 @media print {
     .md-header,
     .md-sidebar,
     .md-footer {
         display: none;
     }
-    
+
     .md-content {
         max-width: 100%;
     }
 }
 
-/* Prominent button styling for external links */
-.md-button--primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    color: white !important;
-    font-weight: 700 !important;
-    padding: 12px 24px !important;
-    font-size: 1.1em !important;
-    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4) !important;
-    transition: all 0.3s ease !important;
-    border: none !important;
-}
-
-.md-button--primary:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6) !important;
-}
-
-/* Floating Action Button for Dashboard Link */
-.fab-dashboard {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
-    background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    box-shadow: 0 4px 20px rgba(255, 75, 75, 0.5);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.fab-dashboard:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 30px rgba(255, 75, 75, 0.7);
-}
-
-/* Announcement bar enhancement */
-.md-announce {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    font-size: 1em !important;
-    padding: 12px 0 !important;
-}
-
-.md-announce a {
-    color: white !important;
-    font-weight: 700 !important;
-}
-
-.md-announce a:hover {
-    color: #ffd700 !important;
-    text-decoration: underline !important;
-}
-
 /* ========================================
-   Jupyter Notebook Theme Fix for Light/Dark Mode
+   4. Jupyter Notebook Theme Fix (Light/Dark)
    ======================================== */
-
-/* Light mode (default) */
 [data-md-color-scheme="default"] .jp-RenderedHTMLCommon,
 [data-md-color-scheme="default"] .jp-RenderedText,
 [data-md-color-scheme="default"] .jp-MarkdownOutput {
@@ -225,7 +240,6 @@ html {
     color: #212121;
 }
 
-/* Dark mode (slate) */
 [data-md-color-scheme="slate"] .jp-RenderedHTMLCommon,
 [data-md-color-scheme="slate"] .jp-RenderedText,
 [data-md-color-scheme="slate"] .jp-MarkdownOutput {
@@ -258,7 +272,6 @@ html {
     color: #e0e0e0;
 }
 
-/* Tables in notebooks */
 [data-md-color-scheme="default"] .jp-RenderedHTMLCommon table,
 [data-md-color-scheme="default"] .dataframe {
     color: #212121;
@@ -293,7 +306,6 @@ html {
     color: #e0e0e0;
 }
 
-/* Code blocks in markdown cells */
 [data-md-color-scheme="default"] .jp-RenderedHTMLCommon code {
     background-color: #f5f5f5;
     color: #d14;
@@ -303,4 +315,3 @@ html {
     background-color: #2e2e2e;
     color: #f97583;
 }
-

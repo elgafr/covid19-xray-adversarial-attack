@@ -27,10 +27,10 @@ tags:
 
 ---
 
-[:fontawesome-solid-file-pdf: **Download Published Paper (PDF)**](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf){ .md-button .md-button--primary target="_blank" }
-[:fontawesome-solid-book: **Explore Methodology**](methodology/overview.md){ .md-button }
-[:fontawesome-solid-chart-bar: **View Results & Visualizations**](results/overview.md){ .md-button }
-[:fontawesome-brands-github: **GitHub Repository**](https://github.com/hisyam99/covid19-xray-adversarial-attack){ .md-button target="_blank" }
+[:fontawesome-solid-file-pdf: Download Published Paper (PDF)](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf){ .md-button .md-button--primary target="_blank" }
+[:fontawesome-solid-book: Explore Methodology](methodology/overview.md){ .md-button }
+[:fontawesome-solid-chart-bar: View Results & Visualizations](results/overview.md){ .md-button }
+[:fontawesome-brands-github: GitHub Repository](https://github.com/hisyam99/covid19-xray-adversarial-attack){ .md-button target="_blank" }
 
 </div>
 
@@ -48,7 +48,8 @@ tags:
 | Resource | Description | Access |
 |:---------|:------------|:------:|
 | **Published Journal Article (JEEEMI)** | Full 19-page peer-reviewed article (PDF) | [:fontawesome-solid-file-pdf: Download PDF](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf){ target="_blank" } |
-| **Experimental Jupyter Notebook** | Complete end-to-end source code (Parts 1 – 15) | [:fontawesome-solid-code: View Notebook](implementation/covid19_xray_adversarial_robustness.ipynb) |
+| **Experimental Jupyter Notebook** | Complete end-to-end source code (45 cells, Parts 1 – 15) | [:fontawesome-solid-code: View Notebook](implementation/covid19_xray_adversarial_robustness.ipynb) |
+| **Trained DenseNet-121 Checkpoint** | Official PyTorch model weights (`best_densenet121_covid_4class.pth`, ~27.13 MB) | [:fontawesome-solid-cube: View in Repository](https://github.com/hisyam99/covid19-xray-adversarial-attack/tree/main/models){ target="_blank" } |
 | **Raw Evaluation Log** | Complete GPU evaluation output (`full_hasil.txt`) | [:fontawesome-solid-terminal: View Summary](experiments/results.md) |
 
 ---
