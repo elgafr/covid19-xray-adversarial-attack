@@ -1,0 +1,283 @@
+site_name: Analisis Kerentanan Model CNN terhadap Serangan Adversarial pada Klasifikasi Citra X-ray COVID-19
+site_description: Analisis kerentanan model DenseNet121 terhadap serangan FGSM dan PGD pada klasifikasi citra X-ray COVID-19 - Tugas Akhir
+site_author: Muhammad Hisyam Kamil & Elga Putri Tri Farma
+site_url: https://hisyam99.github.io/covid19-xray-adversarial-attack/
+
+# Repository
+repo_name: hisyam99/covid19-xray-adversarial-attack
+repo_url: https://github.com/hisyam99/covid19-xray-adversarial-attack
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2025 Muhammad Hisyam Kamil & Elga Putri Tri Farma - Universitas Muhammadiyah Malang
+
+# Configuration
+theme:
+  name: material
+  language: id
+  custom_dir: docs/overrides
+
+  # Color scheme
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Typography
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  # Icons
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/shield-bug
+
+  # Features
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+# Customization
+extra:
+  homepage: https://hisyam99.github.io/covid19-xray-adversarial-attack/
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hisyam99
+      name: GitHub Profile
+    - icon: fontawesome/solid/envelope
+      link: mailto:hisyamkamil99@webmail.umm.ac.id
+      name: Email Contact
+    - icon: fontawesome/solid/graduation-cap
+      link: https://www.umm.ac.id
+      name: Universitas Muhammadiyah Malang
+
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve by
+            <a href="https://github.com/hisyam99/covid19-xray-adversarial-attack/issues/new" target="_blank" rel="noopener">opening an issue</a>.
+
+  version:
+    provider: mike
+    default: latest
+
+  generator: false
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - mkdocs-jupyter:
+      execute: false
+      allow_errors: false
+      include_source: true
+      ignore_h1_titles: false
+      show_input: true
+      theme: light
+      include_requirejs: true
+      kernel_name: python3
+      remove_tag_config:
+        remove_input_tags:
+          - hide_code
+        remove_all_outputs_tags:
+          - hide_output
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang:
+        - en
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      fallback_to_build_date: true
+      enabled: !ENV [CI, false]
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: true
+      caption_position: bottom
+  - tags
+
+# Extra CSS
+extra_css:
+  - stylesheets/extra.css
+
+# Extra JavaScript
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Page tree (Navigation)
+nav:
+  - Home: index.md
+
+  - About:
+    - about/index.md
+    - Overview: about/overview.md
+    - Objectives: about/objectives.md
+    - Team: about/team.md
+
+  - Dataset:
+    - dataset/index.md
+    - Introduction: dataset/introduction.md
+    - Statistics: dataset/statistics.md
+    - Preprocessing: dataset/preprocessing.md
+    - Citation: dataset/citation.md
+
+  - Methodology:
+    - methodology/index.md
+    - Overview: methodology/overview.md
+    - Preprocessing: methodology/preprocessing.md
+    - DenseNet121 Architecture: methodology/densenet.md
+    - Training Strategy: methodology/training.md
+    - Evaluation Metrics: methodology/metrics.md
+    - Adversarial Attacks: methodology/adversarial.md
+
+  - Experiments:
+    - experiments/index.md
+    - Training Process: experiments/training.md
+    - Hyperparameter Tuning: experiments/hyperparameters.md
+    - Results Summary: experiments/results.md
+
+  - Results:
+    - results/index.md
+    - Performance Overview: results/overview.md
+    - Model Comparison: results/comparison.md
+    - Attack Results: results/attack-results.md
+    - Visualizations: results/visualizations.md
+    - Error Analysis: results/error-analysis.md
+
+  - Implementation:
+    - implementation/index.md
+    - Installation: implementation/installation.md
+    - Jupyter Notebook Guide: implementation/notebook.md
+    - Full Analysis Notebook: implementation/code3v3-hisyam_v4.ipynb
+    - Deployment: implementation/deployment.md
+
+  - Conclusions:
+    - conclusions/index.md
+    - Summary: conclusions/summary.md
+    - Key Findings: conclusions/findings.md
+    - Recommendations: conclusions/recommendations.md
+    - Future Work: conclusions/future-work.md
+
+  - References: references.md
+  - Tags: tags.md
+
+# Watch for changes
+watch:
+  - docs
+  - mkdocs.yml
+  - src/notebook

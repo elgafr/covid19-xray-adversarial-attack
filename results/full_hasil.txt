@@ -1,0 +1,498 @@
+Output file downloaded to /kaggle/working/best_densenet121_covid_4class.pth
+Kernel log downloaded to /kaggle/working/code3.log
+
+total 36272
+drwxr-xr-x 3 root root     4096 Dec 18 11:43 .
+drwxr-xr-x 5 root root     4096 Dec 18 11:42 ..
+-rw-r--r-- 1 root root 28452566 Dec 18 11:43 best_densenet121_covid_4class.pth
+-rw-r--r-- 1 root root  8671554 Dec 18 11:43 code3.log
+drwxr-xr-x 2 root root     4096 Dec 18 11:43 .virtual_documents
+
+Memeriksa dataset di: /kaggle/input/covid19-radiography-database/COVID-19_Radiography_Dataset
+
+Kelas 'COVID': ditemukan 3616 gambar.
+Kelas 'Lung_Opacity': ditemukan 6012 gambar.
+Kelas 'Normal': ditemukan 10192 gambar.
+Kelas 'Viral Pneumonia': ditemukan 1345 gambar.
+
+Total semua gambar: 21165
+
+Total gambar dikumpulkan: 21165
+Data Train: 16932 gambar
+Data Val  : 2116 gambar
+Data Test : 2117 gambar
+
+DataLoader siap! Batch size: 32
+
+Menggunakan perangkat: cuda
+Mengumpulkan file gambar...
+Data siap: {'train': 16932, 'val': 2116, 'test': 2117}
+
+Konfigurasi: Epochs=50, Patience=5, Device=cuda
+Membangun arsitektur model...
+Downloading: "https://download.pytorch.org/models/densenet121-a639ec97.pth" to /root/.cache/torch/hub/checkpoints/densenet121-a639ec97.pth
+100%|██████████| 30.8M/30.8M [00:00<00:00, 200MB/s]
+
+ File model ditemukan: 'best_densenet121_covid_4class.pth'
+⏳ Memuat model yang sudah ada...
+ Model berhasil dimuat! Melewati proses training.
+Catatan: Grafik training tidak ditampilkan karena model dimuat dari file.
+
+
+--- Laporan: Original Test Set ---
+                 precision    recall  f1-score   support
+
+          COVID     0.9914    0.9586    0.9747       362
+   Lung_Opacity     0.9566    0.9153    0.9355       602
+         Normal     0.9368    0.9745    0.9553      1019
+Viral Pneumonia     0.9847    0.9627    0.9736       134
+
+       accuracy                         0.9542      2117
+      macro avg     0.9674    0.9528    0.9598      2117
+   weighted avg     0.9548    0.9542    0.9541      2117
+
+
+
+Membuat Adversarial Test Set (ini memakan waktu)...
+100%|██████████| 67/67 [01:22<00:00,  1.23s/it]
+
+--- Laporan: PGD Adversarial Test Set ---
+                 precision    recall  f1-score   support
+
+          COVID     0.3759    0.6022    0.4628       362
+   Lung_Opacity     0.3794    0.3555    0.3671       602
+         Normal     0.7344    0.5888    0.6536      1019
+Viral Pneumonia     0.6987    0.8134    0.7517       134
+
+       accuracy                         0.5390      2117
+      macro avg     0.5471    0.5900    0.5588      2117
+   weighted avg     0.5699    0.5390    0.5457      2117
+
+
+
+=== Tabel Summary PGD (Detail) ===
+  Attack Type   Epsilon  Success Rate Clean (%)  Accuracy on Adv (%)  \
+0         PGD  0.000392               95.418044            53.897024
+
+   Attack Success Rate (ASR %)
+0                    46.102976
+
+
+[Bagian 5] Membuat & Mengevaluasi FGSM Attack (Epsilon=0.1/255)...
+Generating FGSM: 100%|██████████| 67/67 [00:13<00:00,  4.93it/s]
+
+====================
+HASIL EVALUASI: FGSM Attack Test Set
+====================
+Akurasi: 59.28%
+
+Classification Report:
+                 precision    recall  f1-score   support
+
+          COVID     0.4844    0.5138    0.4987       362
+   Lung_Opacity     0.4576    0.4568    0.4572       602
+         Normal     0.6989    0.6742    0.6863      1019
+Viral Pneumonia     0.7181    0.7985    0.7562       134
+
+       accuracy                         0.5928      2117
+      macro avg     0.5897    0.6108    0.5996      2117
+   weighted avg     0.5948    0.5928    0.5935      2117
+
+
+=== Tabel Summary FGSM (Detail) ===
+  Attack Type   Epsilon  Success Rate Clean (%)  Accuracy on Adv (%)  \
+0        FGSM  0.000392               95.418044            59.282003
+
+   Attack Success Rate (ASR %)
+0                    40.717997
+
+
+=== Tabel Summary Gabungan (FGSM & PGD) ===
+  Attack Type   Epsilon  Success Rate Clean (%)  Accuracy on Adv (%)  \
+0         PGD  0.000392               95.418044            53.897024
+1        FGSM  0.000392               95.418044            59.282003
+
+   Attack Success Rate (ASR %)
+0                    46.102976
+1                    40.717997
+
+Mencari sampel representatif untuk setiap kelas...
+
+Memproses Visualisasi Grad-CAM (Clean vs FGSM vs PGD)...
+
+Memulai Visualisasi Detail (5 Sampel per Kelas)...
+
+Processing Class: COVID...
+
+
+Processing Class: Lung_Opacity...
+
+
+Processing Class: Normal...
+
+
+Processing Class: Viral Pneumonia...
+
+Memulai Visualisasi Lengkap dengan Bentuk Noise...
+
+Processing Class: COVID...
+
+Processing Class: Lung_Opacity...
+
+Processing Class: Normal...
+
+Processing Class: Viral Pneumonia...
+
+Memulai Eksperimen FGSM Sub-Pixel Sensitivity...
+Range: 0.1/255 s.d 0.9/255
+
+-> FGSM Eps 0.1/255 | Akurasi: 59.28%
+
+-> FGSM Eps 0.2/255 | Akurasi: 32.88%
+
+-> FGSM Eps 0.3/255 | Akurasi: 21.73%
+
+-> FGSM Eps 0.4/255 | Akurasi: 15.16%
+
+-> FGSM Eps 0.5/255 | Akurasi: 12.14%
+
+-> FGSM Eps 0.6/255 | Akurasi: 10.39%
+
+-> FGSM Eps 0.7/255 | Akurasi: 9.31%
+
+-> FGSM Eps 0.8/255 | Akurasi: 9.26%
+
+-> FGSM Eps 0.9/255 | Akurasi: 9.02%
+
+=== HASIL EKSPERIMEN SUB-PIXEL (FGSM) ===
+     Label  Epsilon_Val   Accuracy
+0  0.1/255     0.000392  59.282003
+1  0.2/255     0.000784  32.876712
+2  0.3/255     0.001176  21.728862
+3  0.4/255     0.001569  15.162966
+4  0.5/255     0.001961  12.139821
+5  0.6/255     0.002353  10.392064
+6  0.7/255     0.002745   9.305621
+7  0.8/255     0.003137   9.258385
+8  0.9/255     0.003529   9.022201
+
+Memulai Visualisasi Mikro-FGSM (0.1/255 - 0.9/255)...
+Generating FGSM Micro-Progression for COVID... Done.
+
+Generating FGSM Micro-Progression for Lung_Opacity... Done.
+
+Generating FGSM Micro-Progression for Normal... Done.
+
+Generating FGSM Micro-Progression for Viral Pneumonia... Done.
+
+Tidak ada sampel yang ditemukan. Harap jalankan bagian pencarian sampel (get_one_sample_per_class) terlebih dahulu.
+
+Mencari sampel representatif untuk setiap kelas...
+Generating FGSM progression for COVID... Done.
+
+Generating FGSM progression for Lung_Opacity... Done.
+
+Generating FGSM progression for Normal... Done.
+
+Generating FGSM progression for Viral Pneumonia... Done.
+
+Memulai Eksperimen PGD Custom Sensitivity...
+Target Epsilon (per 255): [0.01, 0.025, 0.05, 0.1, 0.3]
+
+-> PGD Eps 0.01/255 | Akurasi: 92.82% | ASR: 7.18%
+
+-> PGD Eps 0.025/255 | Akurasi: 86.30% | ASR: 13.70%
+
+-> PGD Eps 0.05/255 | Akurasi: 66.65% | ASR: 33.35%
+
+-> PGD Eps 0.1/255 | Akurasi: 25.51% | ASR: 74.49%
+
+-> PGD Eps 0.3/255 | Akurasi: 0.05% | ASR: 99.95%
+
+=== HASIL SENSITIVITAS PGD (CUSTOM) ===
+  Epsilon Label  Epsilon Val  Accuracy (%)    ASR (%)
+0      0.01/255     0.000039     92.820028   7.179972
+1     0.025/255     0.000098     86.301370  13.698630
+2      0.05/255     0.000196     66.650921  33.349079
+3       0.1/255     0.000392     25.507794  74.492206
+4       0.3/255     0.001176      0.047237  99.952763
+
+Mencari sampel representatif untuk setiap kelas...
+Generating PGD progression for COVID... 0.01/255... 0.025/255... 0.05/255... 0.1/255... Done.
+
+Generating PGD progression for Lung_Opacity... Done.
+
+Generating PGD progression for Normal... Done.
+
+Generating PGD progression for Viral Pneumonia... Done.
+
+Memulai Eksperimen Lanjutan: Sub-Pixel Sensitivity...
+Range: 0.1/255 s.d 0.9/255
+
+Testing Micro-Epsilon: 0.1/255
+
+-> Akurasi: 25.60%
+
+Testing Micro-Epsilon: 0.2/255
+
+-> Akurasi: 1.51%
+
+Testing Micro-Epsilon: 0.3/255
+
+-> Akurasi: 0.14%
+
+Testing Micro-Epsilon: 0.4/255
+
+-> Akurasi: 0.05%
+
+Testing Micro-Epsilon: 0.5/255
+
+-> Akurasi: 0.05%
+
+Testing Micro-Epsilon: 0.6/255
+
+-> Akurasi: 0.00%
+
+Testing Micro-Epsilon: 0.7/255
+
+-> Akurasi: 0.00%
+
+Testing Micro-Epsilon: 0.8/255
+
+-> Akurasi: 0.00%
+
+Testing Micro-Epsilon: 0.9/255
+
+-> Akurasi: 0.00%
+
+=== HASIL EKSPERIMEN SUB-PIXEL ===
+     Label  Epsilon_Val   Accuracy
+0  0.1/255     0.000392  25.602267
+1  0.2/255     0.000784   1.511573
+2  0.3/255     0.001176   0.141710
+3  0.4/255     0.001569   0.047237
+4  0.5/255     0.001961   0.047237
+5  0.6/255     0.002353   0.000000
+6  0.7/255     0.002745   0.000000
+7  0.8/255     0.003137   0.000000
+8  0.9/255     0.003529   0.000000
+
+Menggunakan 'dataloaders['test']' dari Bagian awal.
+Memulai Visualisasi Mikro-PGD (0.1/255 - 0.9/255)...
+Mencari sampel representatif baru...
+Generating Micro-PGD for COVID... Done.
+
+Generating Micro-PGD for Lung_Opacity... Done.
+
+Generating Micro-PGD for Normal... Done.
+
+Generating Micro-PGD for Viral Pneumonia... Done.
+
+Executing Micro-Attack Evaluation...
+Epsilon set to: 0.000392 (0.1/255)
+Device: cuda
+
+Memproses Dataset (Clean vs FGSM vs PGD)...
+100%|██████████| 67/67 [01:42<00:00,  1.53s/it]
+
+==================================================
+TABEL PERBANDINGAN PERFORMA (EPSILON 0.1/255)
+==================================================
+| Method            |   Epsilon |   Accuracy Model After Attack (%) | ASR / Error Rate (%)   |   Avg Confidence (%) |
+|:------------------|----------:|----------------------------------:|:-----------------------|---------------------:|
+| Clean (No Attack) |  0        |                           95.418  | -                      |              96.0468 |
+| FGSM (Micro)      |  0.000392 |                           59.282  | 40.717997165800654     |              82.1624 |
+| PGD (Micro)       |  0.000392 |                           25.3188 | 74.68115257439773      |              85.4159 |
+
+==============================
+CLASSIFICATION REPORT: FGSM
+==============================
+                 precision    recall  f1-score   support
+
+          COVID     0.4844    0.5138    0.4987       362
+   Lung_Opacity     0.4576    0.4568    0.4572       602
+         Normal     0.6989    0.6742    0.6863      1019
+Viral Pneumonia     0.7181    0.7985    0.7562       134
+
+       accuracy                         0.5928      2117
+      macro avg     0.5897    0.6108    0.5996      2117
+   weighted avg     0.5948    0.5928    0.5935      2117
+
+
+==============================
+CLASSIFICATION REPORT: PGD
+==============================
+                 precision    recall  f1-score   support
+
+          COVID     0.1540    0.1796    0.1658       362
+   Lung_Opacity     0.0960    0.1130    0.1038       602
+         Normal     0.4095    0.3288    0.3647      1019
+Viral Pneumonia     0.4024    0.5075    0.4488       134
+
+       accuracy                         0.2532      2117
+      macro avg     0.2655    0.2822    0.2708      2117
+   weighted avg     0.2762    0.2532    0.2618      2117
+
+
+==================================================
+SAMPEL PREDIKSI VISUAL (Clean vs FGSM vs PGD)
+==================================================
+
+
+==================================================
+TABEL PERBANDINGAN PERFORMA (EPSILON 0.1/255)
+==================================================
+| Method            |   Epsilon |   Accuracy Model After Attack (%) | ASR / Error Rate (%)   |   Avg Confidence (%) |
+|:------------------|----------:|----------------------------------:|:-----------------------|---------------------:|
+| Clean (No Attack) |  0        |                           95.418  | -                      |              96.0468 |
+| FGSM (Micro)      |  0.000392 |                           59.282  | 40.717997165800654     |              82.1624 |
+| PGD (Micro)       |  0.000392 |                           25.3188 | 74.68115257439773      |              85.4159 |
+
+==============================
+CLASSIFICATION REPORT: FGSM
+==============================
+                 precision    recall  f1-score   support
+
+          COVID     0.4844    0.5138    0.4987       362
+   Lung_Opacity     0.4576    0.4568    0.4572       602
+         Normal     0.6989    0.6742    0.6863      1019
+Viral Pneumonia     0.7181    0.7985    0.7562       134
+
+       accuracy                         0.5928      2117
+      macro avg     0.5897    0.6108    0.5996      2117
+   weighted avg     0.5948    0.5928    0.5935      2117
+
+
+==============================
+CLASSIFICATION REPORT: PGD
+==============================
+                 precision    recall  f1-score   support
+
+          COVID     0.1540    0.1796    0.1658       362
+   Lung_Opacity     0.0960    0.1130    0.1038       602
+         Normal     0.4095    0.3288    0.3647      1019
+Viral Pneumonia     0.4024    0.5075    0.4488       134
+
+       accuracy                         0.2532      2117
+      macro avg     0.2655    0.2822    0.2708      2117
+   weighted avg     0.2762    0.2532    0.2618      2117
+
+============================================================
+FINAL REPORT: ANALISIS ADVERSARIAL ROBUSTNESS (DENSENET121)
+============================================================
+
+[1] RINGKASAN DATASET
+| Split Set   |   Jumlah Gambar | Persentase Est.   |
+|:------------|----------------:|:------------------|
+| Training    |           16932 | 80%               |
+| Validation  |            2116 | 10%               |
+| Testing     |            2117 | 10%               |
+
+[2] STANDARD ATTACK PERFORMANCE (Epsilon 8/255)
+| Attack Type   |     Epsilon |   Success Rate Clean (%) |   Accuracy on Adv (%) |   Attack Success Rate (ASR %) |
+|:--------------|------------:|-------------------------:|----------------------:|------------------------------:|
+| FGSM          | 0.000392157 |                   95.418 |                59.282 |                        40.718 |
+| PGD           | 0.000392157 |                   95.418 |                53.897 |                        46.103 |
+
+[3] PGD SENSITIVITY ANALYSIS (Custom Low Range)
+Range: 0.1/255 s.d 1.0/255
+| Epsilon Label   |   Accuracy (%) |   ASR (%) |
+|:----------------|---------------:|----------:|
+| 0.01/255        |     92.82      |   7.17997 |
+| 0.025/255       |     86.3014    |  13.6986  |
+| 0.05/255        |     66.6509    |  33.3491  |
+| 0.1/255         |     25.5078    |  74.4922  |
+| 0.3/255         |      0.0472367 |  99.9528  |
+
+[4] SUB-PIXEL ATTACK COMPARISON (FGSM vs PGD)
+| Epsilon   |   Acc FGSM (%) |   Acc PGD (%) |   Gap Performance (%) |
+|:----------|---------------:|--------------:|----------------------:|
+| 0.1/255   |        59.282  |    25.5078    |               33.7742 |
+| 0.3/255   |        21.7289 |     0.0472367 |               21.6816 |
+
+
+============================================================
+KESIMPULAN HASIL EKSPERIMEN (UPDATED)
+============================================================
+1. Baseline Akurasi: 95.42%
+2. Dampak Serangan Standar (8/255): 53.90% (Turun -41.52%)
+3. Dampak Serangan Halus (0.1 - 1.0):
+   - Pada 0.1/255: Akurasi 92.82% (Drop -2.60%)
+   - Pada 1.0/255: Akurasi 0.05% (Drop -95.37%)
+
+KESIMPULAN: Model sensitif, bahkan gangguan 0.1 piksel sudah menurunkan akurasi.
+
+================================================================================
+LAPORAN AKHIR: ADVERSARIAL ROBUSTNESS ANALYSIS (DENSENET121)
+================================================================================
+
+----------------------------------------
+[1] STATUS BASELINE (MODEL PERFORMANCE)
+----------------------------------------
+Akurasi Model pada Data Bersih (Clean Test Set): 95.42%
+| Dataset Partition   |   Jumlah Sample |
+|:--------------------|----------------:|
+| Training            |           16932 |
+| Validation          |            2116 |
+| Testing             |            2117 |
+
+----------------------------------------
+[2] KETAHANAN TERHADAP SERANGAN STANDAR (Eps 8/255)
+----------------------------------------
+| Attack Type   |     Epsilon |   Accuracy on Adv (%) |   Acc Drop (%) |   Attack Success Rate (ASR %) |
+|:--------------|------------:|----------------------:|---------------:|------------------------------:|
+| FGSM          | 0.000392157 |                59.282 |         36.136 |                        40.718 |
+| PGD           | 0.000392157 |                53.897 |         41.521 |                        46.103 |
+
+----------------------------------------
+[3] ANALISIS SENSITIVITAS MIKRO (SUB-PIXEL)
+----------------------------------------
+>> Memuat data PGD Micro...
+| Epsilon Label   |   Epsilon Val |   Accuracy (%) |   ASR (%) |
+|:----------------|--------------:|---------------:|----------:|
+| 0.01/255        |   3.92157e-05 |     92.82      |   7.17997 |
+| 0.025/255       |   9.80392e-05 |     86.3014    |  13.6986  |
+| 0.05/255        |   0.000196078 |     66.6509    |  33.3491  |
+| 0.1/255         |   0.000392157 |     25.5078    |  74.4922  |
+| 0.3/255         |   0.00117647  |      0.0472367 |  99.9528  |
+
+
+>> Memuat data FGSM Micro...
+| Label   |   Epsilon_Val |   Accuracy |
+|:--------|--------------:|-----------:|
+| 0.1/255 |   0.000392157 |   59.282   |
+| 0.2/255 |   0.000784314 |   32.8767  |
+| 0.3/255 |   0.00117647  |   21.7289  |
+| 0.4/255 |   0.00156863  |   15.163   |
+| 0.5/255 |   0.00196078  |   12.1398  |
+| 0.6/255 |   0.00235294  |   10.3921  |
+| 0.7/255 |   0.0027451   |    9.30562 |
+| 0.8/255 |   0.00313725  |    9.25838 |
+| 0.9/255 |   0.00352941  |    9.0222  |
+
+----------------------------------------
+[4] VISUALISASI GRAFIK: PENURUNAN AKURASI
+----------------------------------------
+
+
+----------------------------------------
+[5] INTERPRETASI TEKS DARI GRAFIK
+----------------------------------------
+A. Analisis PGD (Iterative Attack):
+   - Pada gangguan sangat minimal (0.01/255), akurasi model adalah 92.82%.
+   - Pada gangguan mikro tertinggi (0.30/255), akurasi turun menjadi 0.05%.
+   - Total degradasi pada fase mikro: -95.37%.
+   -> KESIMPULAN PGD: Model mulai GOYAH meskipun noise masih di bawah 1 piksel.
+
+B. Analisis FGSM (Fast Attack):
+   - Pada range 0.1/255 s.d 0.9/255, kurva FGSM menunjukkan tren menurun tajam.
+   - Titik terendah FGSM di fase ini ada di akurasi 9.02%.
+
+C. Battle at 0.1/255 (Head-to-Head):
+   - PGD Accuracy : 25.51%
+   - FGSM Accuracy: 59.28%
+   -> FGSM lebih lemah 33.77% dibanding PGD (Model lebih tahan terhadap FGSM).
+
+================================================================================
+END OF REPORT
+================================================================================
