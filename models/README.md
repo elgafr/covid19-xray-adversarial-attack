@@ -1,13 +1,13 @@
 # Trained Model Checkpoint (`DenseNet-121`)
 
-This directory is designated for storing the trained model weights (`best_densenet121_covid_4class.pth`) obtained from fine-tuning on the **COVID-19 Radiography Dataset**.
+This directory contains the official trained PyTorch model weights (`best_densenet121_covid_4class.pth`) obtained from fine-tuning on the **COVID-19 Radiography Dataset**.
 
 ## Model Specifications
 
 | Parameter | Configuration / Value |
 |:----------|:----------------------|
-| **Checkpoint Filename** | `best_densenet121_covid_4class.pth` |
-| **File Size** | `28,452,566 bytes` (~28.45 MB) |
+| **Checkpoint File** | [`best_densenet121_covid_4class.pth`](best_densenet121_covid_4class.pth) |
+| **File Size** | `28,452,566 bytes` (~27.13 MB) |
 | **Base Architecture** | `torchvision.models.densenet121(weights='DEFAULT')` |
 | **Classification Head** | `nn.Linear(in_features=1024, out_features=4)` |
 | **Class Index Mapping (`CLASSES`)** | `['COVID', 'Lung_Opacity', 'Normal', 'Viral Pneumonia']` |
@@ -30,7 +30,7 @@ model = models.densenet121(weights=None)
 num_ftrs = model.classifier.in_features
 model.classifier = nn.Linear(num_ftrs, len(CLASSES))
 
-state_dict = torch.load("best_densenet121_covid_4class.pth", map_location=DEVICE)
+state_dict = torch.load("models/best_densenet121_covid_4class.pth", map_location=DEVICE)
 model.load_state_dict(state_dict)
 model = model.to(DEVICE)
 model.eval()

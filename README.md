@@ -513,8 +513,9 @@ covid19-xray-adversarial-attack/
 ├── journal/                            # [2] Published JEEEMI Journal Paper & Citation Metadata
 │   ├── README.md
 │   └── journal-1506-Article Text-8082-1-10-20260428.pdf
-├── models/                             # [3] Pretrained DenseNet-121 Checkpoint Specification
-│   └── README.md
+├── models/                             # [3] Pretrained DenseNet-121 Checkpoint & Specification
+│   ├── README.md
+│   └── best_densenet121_covid_4class.pth
 ├── notebooks/                          # [4] Primary Experimental Jupyter Notebook (45 Cells)
 │   ├── README.md
 │   └── covid19_xray_adversarial_robustness.ipynb
