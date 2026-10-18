@@ -13,7 +13,7 @@
 **Department of Informatics Engineering — Faculty of Engineering**  
 **Universitas Muhammadiyah Malang (UMM)**
 
-[![Documentation](https://img.shields.io/badge/Documentation-MkDocs_Material-526CFE?style=for-the-badge&logo=materialformkdocs&logoColor=white)](https://hisyam99.github.io/covid19-xray-adversarial-attack/)
+
 [![Journal DOI](https://img.shields.io/badge/JEEEMI_2026-10.35882%2Fjeeemi.v8i2.1506-00629B?style=for-the-badge)](https://doi.org/10.35882/jeeemi.v8i2.1506)
 [![Published PDF](https://img.shields.io/badge/Paper_PDF-JEEEMI_Vol.8_No.2-B31B1B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf)
 [![Notebook](https://img.shields.io/badge/Jupyter_Notebook-45_Cells-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](src/notebook/code3v3-hisyam_v4.ipynb)
