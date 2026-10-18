@@ -264,7 +264,7 @@ nav:
     - implementation/index.md
     - Installation: implementation/installation.md
     - Jupyter Notebook Guide: implementation/notebook.md
-    - Full Analysis Notebook: implementation/code3v3-hisyam_v4.ipynb
+    - Full Analysis Notebook: implementation/covid19_xray_adversarial_robustness.ipynb
     - Deployment: implementation/deployment.md
 
   - Conclusions:

@@ -10,7 +10,7 @@ To ensure a reproducible and systematically structured investigation, the propos
 4. **Stages 4 & 5 — Quantitative Performance Evaluation & XAI Insight (Grad-CAM):** Execution of classification metrics (*Accuracy*, *Precision*, *Recall*, *F1-Score*, *ASR*, *Confidence*, 95% CI, McNemar's $\chi^2$ test) alongside **Grad-CAM** localization and **Cosine Similarity ($S_c$)** quantification to measure *Semantic Decoupling* and *Semantic Inversion*.
 
 <div align="center">
-  <img src="../images/architecture_diagram_v1.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
+  <img src="../images/architecture_diagram.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
   <p><em>Figure 1 (Fig. 1 in JEEEMI): End-to-End Architecture and Adversarial Attacks Evaluation Pipeline.</em></p>
 </div>
 

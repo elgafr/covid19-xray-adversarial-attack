@@ -2,9 +2,9 @@
 
 This directory contains the primary self-contained Jupyter Notebook implementing the complete experimental pipeline:
 
-- **Notebook File:** [`code3v3-hisyam_v4.ipynb`](code3v3-hisyam_v4.ipynb) (45 cells, Parts 1–15)
+- **Notebook File:** [`covid19_xray_adversarial_robustness.ipynb`](covid19_xray_adversarial_robustness.ipynb) (45 cells, Parts 1–15)
 
-## Structural Overview of `code3v3-hisyam_v4.ipynb`
+## Structural Overview of `covid19_xray_adversarial_robustness.ipynb`
 
 | Section | Cells | Description |
 |:--------|:-----:|:------------|

@@ -1,6 +1,6 @@
 # Implementation & Source Code Guide
 
-Technical documentation for installing dependencies, executing the experimental notebook (`code3v3-hisyam_v4.ipynb`), navigating its 45 cells (Parts 1–15), and building the **MkDocs Material** documentation site.
+Technical documentation for installing dependencies, executing the experimental notebook (`covid19_xray_adversarial_robustness.ipynb`), navigating its 45 cells (Parts 1–15), and building the **MkDocs Material** documentation site.
 
 <div class="grid cards" markdown>
 
@@ -14,13 +14,13 @@ Technical documentation for installing dependencies, executing the experimental 
 
     ---
     
-    Section-by-section architectural walkthrough of the 45 cells in `code3v3-hisyam_v4.ipynb` (from data ingestion to final reporting).
+    Section-by-section architectural walkthrough of the 45 cells in `covid19_xray_adversarial_robustness.ipynb` (from data ingestion to final reporting).
 
--   :material-jupyter: **[Full Interactive Analysis Notebook](code3v3-hisyam_v4.ipynb)**
+-   :material-jupyter: **[Full Interactive Analysis Notebook](covid19_xray_adversarial_robustness.ipynb)**
 
     ---
     
-    Inline rendered view of all code cells, execution outputs, tables, and figures from `code3v3-hisyam_v4.ipynb` powered by `mkdocs-jupyter`.
+    Inline rendered view of all code cells, execution outputs, tables, and figures from `covid19_xray_adversarial_robustness.ipynb` powered by `mkdocs-jupyter`.
 
 -   :material-cloud-upload: **[Documentation Build & CI/CD Deployment](deployment.md)**
 
@@ -33,4 +33,4 @@ Technical documentation for installing dependencies, executing the experimental 
 ---
 
 [:octicons-arrow-right-24: Continue to Installation Guide](installation.md){ .md-button .md-button--primary }
-[:fontawesome-solid-code: Open Full Analysis Notebook](code3v3-hisyam_v4.ipynb){ .md-button }
+[:fontawesome-solid-code: Open Full Analysis Notebook](covid19_xray_adversarial_robustness.ipynb){ .md-button }

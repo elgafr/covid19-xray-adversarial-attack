@@ -1,12 +1,12 @@
 # Jupyter Notebook Guide & Code Walkthrough
 
-All experimental pipelines in this study are consolidated within a single self-contained Jupyter Notebook: **`notebooks/code3v3-hisyam_v4.ipynb`** (**45 cells** spanning 15 structured experimental sections).
+All experimental pipelines in this study are consolidated within a single self-contained Jupyter Notebook: **`notebooks/covid19_xray_adversarial_robustness.ipynb`** (**45 cells** spanning 15 structured experimental sections).
 
-[:fontawesome-solid-book-open: **Open Full Rendered Notebook (`code3v3-hisyam_v4.ipynb`)**](code3v3-hisyam_v4.ipynb){ .md-button .md-button--primary }
+[:fontawesome-solid-book-open: **Open Full Rendered Notebook (`covid19_xray_adversarial_robustness.ipynb`)**](covid19_xray_adversarial_robustness.ipynb){ .md-button .md-button--primary }
 
 ---
 
-## Structural Map of the 45 Cells in `code3v3-hisyam_v4.ipynb`
+## Structural Map of the 45 Cells in `covid19_xray_adversarial_robustness.ipynb`
 
 | Section / Stage | Cell Range | Functional Description & Primary Outputs |
 |:----------------|:----------:|:-----------------------------------------|
@@ -29,4 +29,4 @@ All experimental pipelines in this study are consolidated within a single self-c
 
 ---
 
-[:octicons-arrow-right-24: Open Full Rendered Notebook (`code3v3-hisyam_v4.ipynb`)](code3v3-hisyam_v4.ipynb){ .md-button .md-button--primary }
+[:octicons-arrow-right-24: Open Full Rendered Notebook (`covid19_xray_adversarial_robustness.ipynb`)](covid19_xray_adversarial_robustness.ipynb){ .md-button .md-button--primary }

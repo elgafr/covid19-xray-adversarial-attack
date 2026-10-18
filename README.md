@@ -15,7 +15,7 @@
 
 [![Journal DOI](https://img.shields.io/badge/JEEEMI_2026-10.35882%2Fjeeemi.v8i2.1506-00629B?style=for-the-badge)](https://doi.org/10.35882/jeeemi.v8i2.1506)
 [![Published PDF](https://img.shields.io/badge/Paper_PDF-JEEEMI_Vol.8_No.2-B31B1B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](journal/journal-1506-Article%20Text-8082-1-10-20260428.pdf)
-[![Notebook](https://img.shields.io/badge/Jupyter_Notebook-45_Cells-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/code3v3-hisyam_v4.ipynb)
+[![Notebook](https://img.shields.io/badge/Jupyter_Notebook-45_Cells-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](notebooks/covid19_xray_adversarial_robustness.ipynb)
 
 </div>
 
@@ -63,7 +63,7 @@ This repository provides the complete source code, experimental execution logs, 
 | Module / Resource | Path / Location | Description |
 |:------------------|:----------------|:------------|
 | **Published Journal Article** | [`journal/`](journal/journal-1506-Article%20Text-8082-1-10-20260428.pdf) | Official 19-page JEEEMI open-access article (PDF) and citation metadata |
-| **Experimental Notebook** | [`notebooks/`](notebooks/code3v3-hisyam_v4.ipynb) | Complete 45-cell PyTorch Jupyter Notebook (`code3v3-hisyam_v4.ipynb`) |
+| **Experimental Notebook** | [`notebooks/`](notebooks/covid19_xray_adversarial_robustness.ipynb) | Complete 45-cell PyTorch Jupyter Notebook (`covid19_xray_adversarial_robustness.ipynb`) |
 | **Results & Visualizations** | [`results/`](results/) | Raw GPU execution log (`full_hasil.txt`) and all 54 physical PNG figures (`results/figures/`) |
 | **Dataset Specification** | [`datasets/`](datasets/) | COVID-19 Radiography Database (21,165 CXR images, 4 classes) structure and split guide |
 | **Model Checkpoint Guide** | [`models/`](models/) | Pretrained DenseNet-121 checkpoint specification (`best_densenet121_covid_4class.pth`) |
@@ -156,7 +156,7 @@ where $\mu_c = [0.485, \ 0.456, \ 0.406]$ and $\sigma_c = [0.229, \ 0.224, \ 0.2
 ## 5. System Architecture & Mathematical Methodology
 
 <div align="center">
-  <img src="results/figures/architecture_diagram_v1.png" alt="System Architecture and Adversarial Attacks Pipeline" width="900">
+  <img src="results/figures/architecture_diagram.png" alt="System Architecture and Adversarial Attacks Pipeline" width="900">
   <p><em>Figure 4 (Fig. 1 in JEEEMI): End-to-End System Architecture and Adversarial Attacks Pipeline comprising (1) Data Acquisition & Preprocessing, (2) DenseNet-121 Architecture, (3) White-Box Attack Engine (FGSM & PGD), (4) Quantitative Performance Evaluation, and (5) Grad-CAM Spatial Interpretability.</em></p>
 </div>
 
@@ -517,7 +517,7 @@ covid19-xray-adversarial-attack/
 │   └── README.md
 ├── notebooks/                          # [4] Primary Experimental Jupyter Notebook (45 Cells)
 │   ├── README.md
-│   └── code3v3-hisyam_v4.ipynb
+│   └── covid19_xray_adversarial_robustness.ipynb
 ├── results/                            # [5] Experimental Outputs, GPU Logs & All 54 Figures
 │   ├── README.md
 │   ├── full_hasil.txt                  # Complete console output log from CUDA GPU evaluation
@@ -550,7 +550,7 @@ covid19-xray-adversarial-attack/
 └── README.md                           # Main repository documentation
 ```
 
-### 9.3 Map of the 45 Cells in `notebooks/code3v3-hisyam_v4.ipynb`
+### 9.3 Map of the 45 Cells in `notebooks/covid19_xray_adversarial_robustness.ipynb`
 
 | Notebook Section | Cells | Summary of Implementation |
 |:-----------------|:-----:|:--------------------------|
@@ -587,7 +587,7 @@ pip install -r requirements.txt
 
 1. Open [Kaggle Notebooks](https://www.kaggle.com/code) or Google Colab with a **CUDA GPU accelerator** (NVIDIA Tesla T4 or P100).
 2. Mount the **[COVID-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database)** at `/kaggle/input/covid19-radiography-database/COVID-19_Radiography_Dataset`.
-3. Upload `notebooks/code3v3-hisyam_v4.ipynb` and run all cells sequentially.
+3. Upload `notebooks/covid19_xray_adversarial_robustness.ipynb` and run all cells sequentially.
 
 ### 10.3 Serving & Building the Documentation Website (`docs/`)
 

@@ -7,7 +7,7 @@ The primary data source utilized in this study is the **COVID-19 Radiography Dat
 - **Official Kaggle Repository:** [https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database)
 - **Total Volume:** **21,165 Chest X-Ray (CXR)** images in `.png` format
 - **Native Resolution:** $299 \times 299$ pixels (standardized to $224 \times 224$ pixels for DenseNet-121)
-- **Directory Structure:** Each diagnostic category contains `images/` and `masks/` subdirectories. In accordance with our implementation (`code3v3-hisyam_v4.ipynb`), all CXR images are loaded exclusively from the `images/` subdirectory of each category.
+- **Directory Structure:** Each diagnostic category contains `images/` and `masks/` subdirectories. In accordance with our implementation (`covid19_xray_adversarial_robustness.ipynb`), all CXR images are loaded exclusively from the `images/` subdirectory of each category.
 
 ---
 

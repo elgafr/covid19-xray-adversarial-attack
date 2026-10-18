@@ -48,7 +48,7 @@ tags:
 | Resource | Description | Access |
 |:---------|:------------|:------:|
 | **Published Journal Article (JEEEMI)** | Full 19-page peer-reviewed article (PDF) | [:fontawesome-solid-file-pdf: Download PDF](publications/journal-1506-Article%20Text-8082-1-10-20260428.pdf){ target="_blank" } |
-| **Experimental Jupyter Notebook** | Complete end-to-end source code (Parts 1 – 15) | [:fontawesome-solid-code: View Notebook](implementation/code3v3-hisyam_v4.ipynb) |
+| **Experimental Jupyter Notebook** | Complete end-to-end source code (Parts 1 – 15) | [:fontawesome-solid-code: View Notebook](implementation/covid19_xray_adversarial_robustness.ipynb) |
 | **Raw Evaluation Log** | Complete GPU evaluation output (`full_hasil.txt`) | [:fontawesome-solid-terminal: View Summary](experiments/results.md) |
 
 ---
@@ -78,7 +78,7 @@ This research systematically implements white-box gradient-based adversarial att
 ## System Architecture & Pipeline
 
 <div align="center">
-  <img src="images/architecture_diagram_v1.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
+  <img src="images/architecture_diagram.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
   <p><em>Figure 1: Diagram of the DenseNet-121 Classification Architecture, Adversarial Attack Engine (FGSM & PGD), Quantitative Evaluation, and Grad-CAM Interpretability Pipeline (Fig. 1 in JEEEMI).</em></p>
 </div>
 
@@ -177,7 +177,7 @@ This research systematically implements white-box gradient-based adversarial att
 
     ---
     
-    Installation instructions, structured code walkthrough, and full interactive Jupyter Notebook (`code3v3-hisyam_v4.ipynb`) rendered inline.
+    Installation instructions, structured code walkthrough, and full interactive Jupyter Notebook (`covid19_xray_adversarial_robustness.ipynb`) rendered inline.
     
     [:octicons-arrow-right-24: Open Implementation](implementation/index.md)
 

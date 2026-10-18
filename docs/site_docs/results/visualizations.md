@@ -1,6 +1,6 @@
 # Complete Visualizations Gallery (Grad-CAM, Noise & Epsilon Progression)
 
-This gallery presents the complete set of validated experimental visualizations from our JEEEMI article (Figs. 1–11) and `code3v3-hisyam_v4.ipynb`. Click any image to inspect it in full resolution via lightbox zoom.
+This gallery presents the complete set of validated experimental visualizations from our JEEEMI article (Figs. 1–11) and `covid19_xray_adversarial_robustness.ipynb`. Click any image to inspect it in full resolution via lightbox zoom.
 
 ---
 

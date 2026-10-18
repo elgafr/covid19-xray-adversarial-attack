@@ -1,6 +1,6 @@
 # Hyperparameter & Attack Configuration
 
-This page documents all configuration parameters used in the experimental notebook (`code3v3-hisyam_v4.ipynb`) and reported in the JEEEMI article.
+This page documents all configuration parameters used in the experimental notebook (`covid19_xray_adversarial_robustness.ipynb`) and reported in the JEEEMI article.
 
 ---
 

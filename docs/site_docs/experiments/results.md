@@ -6,7 +6,7 @@ This page provides a consolidated overview of all experimental outputs recorded 
 
 ## 1. Evaluation Scenarios at $\epsilon = 0.1/255$
 
-Within `code3v3-hisyam_v4.ipynb`, two PGD parameterizations at $\epsilon = 0.1/255$ are evaluated:
+Within `covid19_xray_adversarial_robustness.ipynb`, two PGD parameterizations at $\epsilon = 0.1/255$ are evaluated:
 
 1. **Part 4 (Initial PGD Evaluation with Fixed Step $\alpha = 2/255$):** Yields an adversarial accuracy of **53.90%** (ASR **46.10%**).
 2. **Parts 9b, 11 & Dedicated Micro-Attack Evaluation (Proportional Step $\alpha = \epsilon/4, N = 10$ — Reported in JEEEMI Tables 2, 3, and 4):** Scaling the step size proportionally to the sub-pixel $\epsilon$-ball ($N \cdot \alpha = 2.5\epsilon$) prevents gradient overshoot and yields a much more severe accuracy drop to **25.32%** (ASR **74.68%**).

@@ -20,7 +20,7 @@ Comprehensive documentation of the experimental environment, **DenseNet-121** tr
 
     ---
     
-    Consolidated summary of all 15 experimental sections from `code3v3-hisyam_v4.ipynb` and `results/full_hasil.txt`.
+    Consolidated summary of all 15 experimental sections from `covid19_xray_adversarial_robustness.ipynb` and `results/full_hasil.txt`.
 
 </div>
 

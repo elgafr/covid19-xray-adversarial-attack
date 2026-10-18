@@ -68,7 +68,7 @@ pip install -r docs/requirements.txt
    ```text
    /kaggle/input/covid19-radiography-database/COVID-19_Radiography_Dataset
    ```
-3. Upload `notebooks/code3v3-hisyam_v4.ipynb` (and optionally place `best_densenet121_covid_4class.pth` in `/kaggle/working/`).
+3. Upload `notebooks/covid19_xray_adversarial_robustness.ipynb` (and optionally place `best_densenet121_covid_4class.pth` in `/kaggle/working/`).
 4. Execute all cells sequentially. The `grad-cam` package is installed automatically in `Cell 19` (`!pip install grad-cam`).
 
 ---
