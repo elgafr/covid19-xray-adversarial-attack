@@ -70,18 +70,13 @@ Setio Basuki received the bachelor's degree from STT Telkom (Telkom University) 
 
 ---
 
-## Journal Publication & Letter of Acceptance
+## Journal Publication
 
 This research has been peer-reviewed and published in the **Journal of Electronics, Electromedical Engineering, and Medical Informatics (JEEEMI)**:
 
 - **Title:** *Robustness Under Attack: Assessing Adversarial Fragility in Deep Learning Models for COVID-19 Radiography Prediction*
 - **Journal:** JEEEMI, Vol. 8, No. 2, April 2026, pp: 769–788 (e-ISSN: 2656-8632)
 - **DOI:** [https://doi.org/10.35882/jeeemi.v8i2.1506](https://doi.org/10.35882/jeeemi.v8i2.1506)
-
-<div align="center">
-  <img src="../images/loa_jurnal_jeeemi.png" alt="Letter of Acceptance JEEEMI" width="650">
-  <p><em>Letter of Acceptance (LOA) from the Journal of Electronics, Electromedical Engineering, and Medical Informatics (JEEEMI).</em></p>
-</div>
 
 ---
 
