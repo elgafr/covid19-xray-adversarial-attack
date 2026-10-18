@@ -26,17 +26,15 @@ On the clean test set, the **DenseNet-121** architecture achieved an overall acc
 
 === "Confusion Matrix — Original Test Set (Fig. 6)"
 
-    <div align="center">
-      <img src="../images/cm_original_test_set.png" alt="Confusion Matrix Original Test Set" width="550">
-      <p><em>Figure 1 (Fig. 6 in JEEEMI): Confusion Matrix on the Original Clean Test Set ($N=2,117$, Accuracy = 95.42%).</em></p>
-    </div>
+    ![Confusion Matrix Original Test Set](../images/cm_original_test_set.png){: .center width="550" }
+
+*Figure: Figure 1 (Fig. 6 in JEEEMI): Confusion Matrix on the Original Clean Test Set ($N=2,117$, Accuracy = 95.42%).*
 
 === "Training & Validation Curves (Fig. 5)"
 
-    <div align="center">
-      <img src="../images/training_validation_acc_loss_densenet121.png" alt="Training and Validation Accuracy and Loss" width="800">
-      <p><em>Figure 2 (Fig. 5 in JEEEMI): Training and Validation (a) Accuracy and (b) Loss convergence profiles.</em></p>
-    </div>
+    ![Training and Validation Accuracy and Loss](../images/training_validation_acc_loss_densenet121.png){: .center width="800" }
+
+*Figure: Figure 2 (Fig. 5 in JEEEMI): Training and Validation (a) Accuracy and (b) Loss convergence profiles.*
 
 ---
 

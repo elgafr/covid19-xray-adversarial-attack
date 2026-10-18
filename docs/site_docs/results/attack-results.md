@@ -6,10 +6,9 @@ This section documents the fine-grained sensitivity evaluation of **DenseNet-121
 
 ## 1. Unified Robustness Profile: FGSM vs. PGD (Fig. 11 in JEEEMI)
 
-<div align="center">
-  <img src="../images/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png" alt="Robustness Profile Accuracy Degradation" width="800">
-  <p><em>Figure 1 (Fig. 11 in JEEEMI): Robustness Profile illustrating accuracy degradation across sub-pixel and micro noise levels for FGSM and PGD relative to the 95.42% clean baseline.</em></p>
-</div>
+![Robustness Profile Accuracy Degradation](../images/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png){: .center width="800" }
+
+*Figure: Figure 1 (Fig. 11 in JEEEMI): Robustness Profile illustrating accuracy degradation across sub-pixel and micro noise levels for FGSM and PGD relative to the 95.42% clean baseline.*
 
 ---
 
@@ -30,10 +29,9 @@ The table below details model sensitivity to single-step linear **FGSM** perturb
 | **0.8/255** | `0.003137` | **9.2584%** | **90.7416%** | $-86.16\%$ |
 | **0.9/255** | `0.003529` | **9.0222%** | **90.9778%** | $-86.40\%$ |
 
-<div align="center">
-  <img src="../images/analisis_batas_toleransi_fgsm.png" alt="FGSM Tolerance Bound Analysis" width="720">
-  <p><em>Figure 2: FGSM Tolerance Bound Analysis across sub-pixel perturbations ($0.1/255 - 0.9/255$).</em></p>
-</div>
+![FGSM Tolerance Bound Analysis](../images/analisis_batas_toleransi_fgsm.png){: .center width="720" }
+
+*Figure: Figure 2: FGSM Tolerance Bound Analysis across sub-pixel perturbations ($0.1/255 - 0.9/255$).*
 
 !!! info "Degradation Plateau in Single-Step FGSM"
     Between $\epsilon = 0.1/255$ and $0.3/255$, FGSM induces a steep decline from **95.42%** to **21.73%**. Beyond $\epsilon = 0.4/255$, the degradation curve exhibits a plateau between **9.02% and 15.16%** accuracy, confirming that single-step linear approximations reach a computational limit when navigating curved high-dimensional decision boundaries.
@@ -69,24 +67,21 @@ In contrast to FGSM, iterative **PGD** optimization ($\alpha = \epsilon/4, N = 1
 
 === "PGD Sensitivity 0.01 - 0.3/255"
 
-    <div align="center">
-      <img src="../images/model_sensitivity_pgd_0.01-0.3_255.png" alt="Model Sensitivity PGD 0.01-0.3" width="700">
-      <p><em>Figure 3: DenseNet-121 sensitivity curve under PGD across $\epsilon = 0.01/255$ to $0.3/255$.</em></p>
-    </div>
+    ![Model Sensitivity PGD 0.01-0.3](../images/model_sensitivity_pgd_0.01-0.3_255.png){: .center width="700" }
+
+*Figure: Figure 3: DenseNet-121 sensitivity curve under PGD across $\epsilon = 0.01/255$ to $0.3/255$.*
 
 === "PGD Sub-Pixel Tolerance 0.1 - 0.9/255"
 
-    <div align="center">
-      <img src="../images/analisis_batas_toleransi_pgd.png" alt="PGD Sub-Pixel Tolerance Bound" width="700">
-      <p><em>Figure 4: Sub-pixel PGD accuracy degradation curve across $\epsilon = 0.1/255$ to $0.9/255$.</em></p>
-    </div>
+    ![PGD Sub-Pixel Tolerance Bound](../images/analisis_batas_toleransi_pgd.png){: .center width="700" }
+
+*Figure: Figure 4: Sub-pixel PGD accuracy degradation curve across $\epsilon = 0.1/255$ to $0.9/255$.*
 
 === "Head-to-Head FGSM vs. PGD"
 
-    <div align="center">
-      <img src="../images/head-to-head-fgsm-pgd.png" alt="Head to Head FGSM vs PGD" width="700">
-      <p><em>Figure 5: Head-to-Head comparison between FGSM and PGD at matching sub-pixel bounds ($\epsilon = 0.1/255$ and $\epsilon = 0.3/255$).</em></p>
-    </div>
+    ![Head to Head FGSM vs PGD](../images/head-to-head-fgsm-pgd.png){: .center width="700" }
+
+*Figure: Figure 5: Head-to-Head comparison between FGSM and PGD at matching sub-pixel bounds ($\epsilon = 0.1/255$ and $\epsilon = 0.3/255$).*
 
 ---
 

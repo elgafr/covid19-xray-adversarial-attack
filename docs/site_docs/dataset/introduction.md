@@ -28,15 +28,13 @@ The dataset categorizes chest radiographs into four distinct clinical groups:
 
 ## Representative Sample Visualizations
 
-<div align="center">
-  <img src="../images/fig2_dataset_representative_samples_stats.png" alt="Representative Samples COVID-19 Radiography Database" width="850">
-  <p><em>Figure 1 (Fig. 2 in JEEEMI): Representative samples from the COVID-19 Radiography Database (6 instances per class) showing spatial resolution ($299 \times 299$) and radiometric pixel intensity statistics ($\mu, \sigma$).</em></p>
-</div>
+![Representative Samples COVID-19 Radiography Database](../images/fig2_dataset_representative_samples_stats.png){: .center width="850" }
 
-<div align="center">
-  <img src="../images/sample_dataset.png" alt="Batch Sample from Training DataLoader" width="750">
-  <p><em>Figure 2: Visualization of the first training mini-batch (4 samples) after un-normalizing ImageNet statistics in PyTorch (Cell 6 of the Notebook).</em></p>
-</div>
+*Figure: Figure 1 (Fig. 2 in JEEEMI): Representative samples from the COVID-19 Radiography Database (6 instances per class) showing spatial resolution ($299 \times 299$) and radiometric pixel intensity statistics ($\mu, \sigma$).*
+
+![Batch Sample from Training DataLoader](../images/sample_dataset.png){: .center width="750" }
+
+*Figure: Figure 2: Visualization of the first training mini-batch (4 samples) after un-normalizing ImageNet statistics in PyTorch (Cell 6 of the Notebook).*
 
 ---
 

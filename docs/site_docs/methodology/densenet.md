@@ -27,10 +27,9 @@ With a growth rate of $k = 32$, each layer adds 32 new feature maps to the colle
 
 ## Layer-by-Layer Architecture & 4-Class Classifier Modification
 
-<div align="center">
-  <img src="../images/cropped_architecture_diagram.png" alt="DenseNet-121 Architecture Diagram" width="850">
-  <p><em>Figure 1: Detailed DenseNet-121 Architecture (Stage 2 in Fig. 1 of JEEEMI) showing the 4 Dense Blocks, 3 Transition Layers, Global Average Pooling, and 4-Class Linear Classifier.</em></p>
-</div>
+![DenseNet-121 Architecture Diagram](../images/cropped_architecture_diagram.png){: .center width="850" }
+
+*Figure: Figure 1: Detailed DenseNet-121 Architecture (Stage 2 in Fig. 1 of JEEEMI) showing the 4 Dense Blocks, 3 Transition Layers, Global Average Pooling, and 4-Class Linear Classifier.*
 
 | Architectural Stage | Layer Configuration | Output Spatial & Channel Dimensions |
 |:--------------------|:--------------------|:-----------------------------------:|

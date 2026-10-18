@@ -9,10 +9,9 @@ To ensure a reproducible and systematically structured investigation, the propos
 3. **Stage 3 — White-Box Adversarial Attack Engine:** Generation of $L_\infty$-constrained gradient-based perturbations ($\|\delta\|_\infty \le \epsilon$) using single-step **FGSM** and iterative **PGD** ($\alpha = \epsilon/4, N = 10$) across sub-pixel and micro-perturbation bounds.
 4. **Stages 4 & 5 — Quantitative Performance Evaluation & XAI Insight (Grad-CAM):** Execution of classification metrics (*Accuracy*, *Precision*, *Recall*, *F1-Score*, *ASR*, *Confidence*, 95% CI, McNemar's $\chi^2$ test) alongside **Grad-CAM** localization and **Cosine Similarity ($S_c$)** quantification to measure *Semantic Decoupling* and *Semantic Inversion*.
 
-<div align="center">
-  <img src="../images/architecture_diagram.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
-  <p><em>Figure 1 (Fig. 1 in JEEEMI): End-to-End Architecture and Adversarial Attacks Evaluation Pipeline.</em></p>
-</div>
+![Diagram Architecture and Adversarial Attacks Pipeline](../images/architecture_diagram.png){: .center width="900" }
+
+*Figure: Figure 1 (Fig. 1 in JEEEMI): End-to-End Architecture and Adversarial Attacks Evaluation Pipeline.*
 
 ---
 
@@ -20,17 +19,15 @@ To ensure a reproducible and systematically structured investigation, the propos
 
 === "FGSM Evaluation Workflow"
 
-    <div align="center">
-      <img src="../images/alur_kerangka_penelitian_fgsm.png" alt="FGSM Research Workflow" width="750">
-      <p><em>Figure 2: Experimental workflow for evaluating DenseNet-121 vulnerability against single-step FGSM perturbations.</em></p>
-    </div>
+    ![FGSM Research Workflow](../images/alur_kerangka_penelitian_fgsm.png){: .center width="750" }
+
+*Figure: Figure 2: Experimental workflow for evaluating DenseNet-121 vulnerability against single-step FGSM perturbations.*
 
 === "PGD Evaluation Workflow"
 
-    <div align="center">
-      <img src="../images/alur_kerangka_penelitian_pgd.png" alt="PGD Research Workflow" width="750">
-      <p><em>Figure 3: Experimental workflow for evaluating DenseNet-121 vulnerability against iterative PGD perturbations.</em></p>
-    </div>
+    ![PGD Research Workflow](../images/alur_kerangka_penelitian_pgd.png){: .center width="750" }
+
+*Figure: Figure 3: Experimental workflow for evaluating DenseNet-121 vulnerability against iterative PGD perturbations.*
 
 ### Nine Sequential Execution Steps
 

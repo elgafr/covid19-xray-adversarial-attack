@@ -10,31 +10,27 @@ Three-row progression grids (**Row 1:** Input Image + Prediction & Confidence, *
 
 === "Fig. 9(a) — Normal Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_pgd_kelas_normal.png" alt="PGD Progression Normal" width="900">
-      <p><em>Fig. 9(a) in JEEEMI: PGD progression on Normal class. Clean prediction: Normal (99.79%) shifts to Lung_Opacity (100%) at $\epsilon=0.01/255$ and COVID-19 (100%) at $\epsilon \ge 0.05/255$, accompanied by Grad-CAM Semantic Decoupling toward shoulder and clavicle borders.</em></p>
-    </div>
+    ![PGD Progression Normal](../images/analisis_progresi_pgd_kelas_normal.png){: .center width="900" }
+
+*Figure: Fig. 9(a) in JEEEMI: PGD progression on Normal class. Clean prediction: Normal (99.79%) shifts to Lung_Opacity (100%) at $\epsilon=0.01/255$ and COVID-19 (100%) at $\epsilon \ge 0.05/255$, accompanied by Grad-CAM Semantic Decoupling toward shoulder and clavicle borders.*
 
 === "Fig. 9(b) — Lung Opacity Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_pgd_kelas_lung_opacity.png" alt="PGD Progression Lung Opacity" width="900">
-      <p><em>Fig. 9(b) in JEEEMI: PGD progression on Lung Opacity class. Clean prediction: Lung_Opacity (100%) shifts immediately to COVID-19 (100%) from $\epsilon=0.01/255$ onward as spatial attention disperses to image corners.</em></p>
-    </div>
+    ![PGD Progression Lung Opacity](../images/analisis_progresi_pgd_kelas_lung_opacity.png){: .center width="900" }
+
+*Figure: Fig. 9(b) in JEEEMI: PGD progression on Lung Opacity class. Clean prediction: Lung_Opacity (100%) shifts immediately to COVID-19 (100%) from $\epsilon=0.01/255$ onward as spatial attention disperses to image corners.*
 
 === "Fig. 9(c) — COVID-19 Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_pgd_kelas_covid.png" alt="PGD Progression COVID-19" width="900">
-      <p><em>Fig. 9(c) in JEEEMI: PGD progression on COVID-19 class. Clean prediction: COVID (100%) shifts to Normal (100%) at $\epsilon=0.01 - 0.05/255$ and to Viral Pneumonia (100%) at $\epsilon=0.1/255$ via Semantic Inversion.</em></p>
-    </div>
+    ![PGD Progression COVID-19](../images/analisis_progresi_pgd_kelas_covid.png){: .center width="900" }
+
+*Figure: Fig. 9(c) in JEEEMI: PGD progression on COVID-19 class. Clean prediction: COVID (100%) shifts to Normal (100%) at $\epsilon=0.01 - 0.05/255$ and to Viral Pneumonia (100%) at $\epsilon=0.1/255$ via Semantic Inversion.*
 
 === "Fig. 9(d) — Viral Pneumonia Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_pgd_kelas_viral_pneumonia.png" alt="PGD Progression Viral Pneumonia" width="900">
-      <p><em>Fig. 9(d) in JEEEMI: PGD progression on Viral Pneumonia class. Clean prediction: Viral Pneumonia (99.76%) shifts to Normal (100%) at $\epsilon=0.01 - 0.025/255$ and COVID-19 (100%) at $\epsilon \ge 0.05/255$.</em></p>
-    </div>
+    ![PGD Progression Viral Pneumonia](../images/analisis_progresi_pgd_kelas_viral_pneumonia.png){: .center width="900" }
+
+*Figure: Fig. 9(d) in JEEEMI: PGD progression on Viral Pneumonia class. Clean prediction: Viral Pneumonia (99.76%) shifts to Normal (100%) at $\epsilon=0.01 - 0.025/255$ and COVID-19 (100%) at $\epsilon \ge 0.05/255$.*
 
 ---
 
@@ -44,31 +40,27 @@ Progression grids utilizing **Auto-Scaled Noise Heatmaps (`cmap='magma'`)** to e
 
 === "Fig. 10(a) — Normal Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_normal.png" alt="FGSM Progression Normal" width="900">
-      <p><em>Fig. 10(a) in JEEEMI: FGSM progression on Normal class. Organ-edge disturbances trigger misclassification into Lung_Opacity (100%) at $\epsilon=0.01$ and COVID-19 (98.9% – 100%) at $\epsilon \ge 0.025$.</em></p>
-    </div>
+    ![FGSM Progression Normal](../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_normal.png){: .center width="900" }
+
+*Figure: Fig. 10(a) in JEEEMI: FGSM progression on Normal class. Organ-edge disturbances trigger misclassification into Lung_Opacity (100%) at $\epsilon=0.01$ and COVID-19 (98.9% – 100%) at $\epsilon \ge 0.025$.*
 
 === "Fig. 10(b) — Lung Opacity Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_lung_opacity.png" alt="FGSM Progression Lung Opacity" width="900">
-      <p><em>Fig. 10(b) in JEEEMI: FGSM progression on Lung Opacity class. Grad-CAM focus shifts sharply to the upper shoulder region, flipping predictions to COVID-19 (97.3% – 100%).</em></p>
-    </div>
+    ![FGSM Progression Lung Opacity](../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_lung_opacity.png){: .center width="900" }
+
+*Figure: Fig. 10(b) in JEEEMI: FGSM progression on Lung Opacity class. Grad-CAM focus shifts sharply to the upper shoulder region, flipping predictions to COVID-19 (97.3% – 100%).*
 
 === "Fig. 10(c) — COVID-19 Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_covid.png" alt="FGSM Progression COVID-19" width="900">
-      <p><em>Fig. 10(c) in JEEEMI: FGSM progression on COVID-19 class. Model exhibits relative resistance to single-step perturbations at higher bounds despite visible edge noise.</em></p>
-    </div>
+    ![FGSM Progression COVID-19](../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_covid.png){: .center width="900" }
+
+*Figure: Fig. 10(c) in JEEEMI: FGSM progression on COVID-19 class. Model exhibits relative resistance to single-step perturbations at higher bounds despite visible edge noise.*
 
 === "Fig. 10(d) — Viral Pneumonia Class"
 
-    <div align="center">
-      <img src="../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_viral_pneumonia.png" alt="FGSM Progression Viral Pneumonia" width="900">
-      <p><em>Fig. 10(d) in JEEEMI: FGSM progression on Viral Pneumonia class. Boundary disturbance patterns shift predictions to Normal (85.7%) and COVID-19 (77.8% – 100%).</em></p>
-    </div>
+    ![FGSM Progression Viral Pneumonia](../images/analisis_progresi_fgsm_(auto-enhanced-noise)_kelas_viral_pneumonia.png){: .center width="900" }
+
+*Figure: Fig. 10(d) in JEEEMI: FGSM progression on Viral Pneumonia class. Boundary disturbance patterns shift predictions to Normal (85.7%) and COVID-19 (77.8% – 100%).*
 
 ---
 

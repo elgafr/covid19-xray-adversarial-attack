@@ -23,10 +23,9 @@ To guarantee that both FGSM and PGD evaluations are executed against the exact s
 
 ## Training and Validation Convergence Dynamics (Fig. 5 in JEEEMI)
 
-<div align="center">
-  <img src="../images/training_validation_acc_loss_densenet121.png" alt="Training and Validation Accuracy and Loss" width="850">
-  <p><em>Figure 1 (Fig. 5 in JEEEMI): Training and Validation (a) Accuracy and (b) Loss curves for DenseNet-121.</em></p>
-</div>
+![Training and Validation Accuracy and Loss](../images/training_validation_acc_loss_densenet121.png){: .center width="850" }
+
+*Figure: Figure 1 (Fig. 5 in JEEEMI): Training and Validation (a) Accuracy and (b) Loss curves for DenseNet-121.*
 
 ### Convergence Analysis
 

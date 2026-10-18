@@ -36,31 +36,27 @@ This section presents the quantitative performance comparison between the unpert
 
 === "FGSM Confusion Matrix Detail (Fig. 7)"
 
-    <div align="center">
-      <img src="../images/fig7_cm_fgsm_detailed_percentage.png" alt="FGSM Confusion Matrix Detailed" width="580">
-      <p><em>Figure 1 (Fig. 7 in JEEEMI): Confusion Matrix detailing misclassification trends under FGSM ($\epsilon=0.1/255$, Accuracy = 59.28%) with absolute sample counts and class-normalized percentages.</em></p>
-    </div>
+    ![FGSM Confusion Matrix Detailed](../images/fig7_cm_fgsm_detailed_percentage.png){: .center width="580" }
+
+*Figure: Figure 1 (Fig. 7 in JEEEMI): Confusion Matrix detailing misclassification trends under FGSM ($\epsilon=0.1/255$, Accuracy = 59.28%) with absolute sample counts and class-normalized percentages.*
 
 === "PGD Confusion Matrix Detail (Fig. 8)"
 
-    <div align="center">
-      <img src="../images/fig8_cm_pgd_detailed_percentage.png" alt="PGD Confusion Matrix Detailed" width="580">
-      <p><em>Figure 2 (Fig. 8 in JEEEMI): Confusion Matrix detailing misclassification trends under PGD ($\epsilon=0.1/255$, Accuracy = 25.32%), illustrating near-total collapse in Lung Opacity (11.3% correct) and COVID-19 (18.0% correct).</em></p>
-    </div>
+    ![PGD Confusion Matrix Detailed](../images/fig8_cm_pgd_detailed_percentage.png){: .center width="580" }
+
+*Figure: Figure 2 (Fig. 8 in JEEEMI): Confusion Matrix detailing misclassification trends under PGD ($\epsilon=0.1/255$, Accuracy = 25.32%), illustrating near-total collapse in Lung Opacity (11.3% correct) and COVID-19 (18.0% correct).*
 
 === "Side-by-Side CM FGSM vs. PGD"
 
-    <div align="center">
-      <img src="../images/cm_fgsm_vs_pgd_0.1.png" alt="Side by Side CM FGSM vs PGD" width="820">
-      <p><em>Figure 3: Side-by-side comparison of FGSM (left) and PGD (right) Confusion Matrices at $\epsilon = 0.1/255$.</em></p>
-    </div>
+    ![Side by Side CM FGSM vs PGD](../images/cm_fgsm_vs_pgd_0.1.png){: .center width="820" }
+
+*Figure: Figure 3: Side-by-side comparison of FGSM (left) and PGD (right) Confusion Matrices at $\epsilon = 0.1/255$.*
 
 === "Visual Prediction Samples Clean vs. FGSM vs. PGD"
 
-    <div align="center">
-      <img src="../images/SAMPEL_PREDIKSI_VISUAL_(Clean_vs_FGSM_vs_PGD)_0.1.png" alt="Sample Visual Predictions Clean vs FGSM vs PGD" width="750">
-      <p><em>Figure 4: Visual comparison of 4 test samples across Clean, FGSM ($\epsilon=0.1/255$), and PGD ($\epsilon=0.1/255$) conditions. Perturbed scans remain visually indistinguishable from clean scans while inducing high-confidence misclassifications.</em></p>
-    </div>
+    ![Sample Visual Predictions Clean vs FGSM vs PGD](../images/SAMPEL_PREDIKSI_VISUAL_(Clean_vs_FGSM_vs_PGD)_0.1.png){: .center width="750" }
+
+*Figure: Figure 4: Visual comparison of 4 test samples across Clean, FGSM ($\epsilon=0.1/255$), and PGD ($\epsilon=0.1/255$) conditions. Perturbed scans remain visually indistinguishable from clean scans while inducing high-confidence misclassifications.*
 
 ---
 

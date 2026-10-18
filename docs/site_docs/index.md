@@ -78,10 +78,9 @@ This research systematically implements white-box gradient-based adversarial att
 
 ## System Architecture & Pipeline
 
-<div align="center">
-  <img src="images/architecture_diagram.png" alt="Diagram Architecture and Adversarial Attacks Pipeline" width="900">
-  <p><em>Figure 1: Diagram of the DenseNet-121 Classification Architecture, Adversarial Attack Engine (FGSM & PGD), Quantitative Evaluation, and Grad-CAM Interpretability Pipeline (Fig. 1 in JEEEMI).</em></p>
-</div>
+![Diagram Architecture and Adversarial Attacks Pipeline](images/architecture_diagram.png){: .center width="900" }
+
+*Figure: Figure 1: Diagram of the DenseNet-121 Classification Architecture, Adversarial Attack Engine (FGSM & PGD), Quantitative Evaluation, and Grad-CAM Interpretability Pipeline (Fig. 1 in JEEEMI).*
 
 ---
 
@@ -109,24 +108,21 @@ This research systematically implements white-box gradient-based adversarial att
 
 === "Sub-Pixel Robustness Profile (Fig. 11)"
 
-    <div align="center">
-      <img src="images/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png" alt="Robustness Profile Sub-Pixel" width="750">
-      <p><em>Accuracy degradation profile across sub-pixel and micro noise levels: FGSM exhibits a gradual decline with a plateau, whereas PGD induces immediate exponential collapse down to 0.05%.</em></p>
-    </div>
+    ![Robustness Profile Sub-Pixel](images/robustness_profile_degradasi_akurasi_pada_noise_sub_pixel_dan_mikro.png){: .center width="750" }
+
+*Figure: Accuracy degradation profile across sub-pixel and micro noise levels: FGSM exhibits a gradual decline with a plateau, whereas PGD induces immediate exponential collapse down to 0.05%.*
 
 === "Grad-CAM Clean vs FGSM vs PGD"
 
-    <div align="center">
-      <img src="images/Visualisasi_Grad-CAM_(Clean_vs_FGSM_vs_PGD).png" alt="Visualisasi Grad-CAM Clean vs FGSM vs PGD" width="850">
-      <p><em>Comparison of input images and Grad-CAM activation maps across all four diagnostic classes under Clean, FGSM ($\epsilon=0.1/255$), and PGD ($\epsilon=0.1/255$) conditions.</em></p>
-    </div>
+    ![Visualisasi Grad-CAM Clean vs FGSM vs PGD](images/Visualisasi_Grad-CAM_(Clean_vs_FGSM_vs_PGD).png){: .center width="850" }
+
+*Figure: Comparison of input images and Grad-CAM activation maps across all four diagnostic classes under Clean, FGSM ($\epsilon=0.1/255$), and PGD ($\epsilon=0.1/255$) conditions.*
 
 === "Confusion Matrix FGSM vs PGD"
 
-    <div align="center">
-      <img src="images/cm_fgsm_vs_pgd_0.1.png" alt="Confusion Matrix FGSM vs PGD" width="800">
-      <p><em>Side-by-side comparison of FGSM (59.28% accuracy) and PGD (25.32% accuracy) Confusion Matrices at $\epsilon = 0.1/255$.</em></p>
-    </div>
+    ![Confusion Matrix FGSM vs PGD](images/cm_fgsm_vs_pgd_0.1.png){: .center width="800" }
+
+*Figure: Side-by-side comparison of FGSM (59.28% accuracy) and PGD (25.32% accuracy) Confusion Matrices at $\epsilon = 0.1/255$.*
 
 ---
 

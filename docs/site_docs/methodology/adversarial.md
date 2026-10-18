@@ -22,10 +22,9 @@ where:
 - $J(\theta, x, y)$ is the classification loss function (cross-entropy), and
 - $\epsilon$ is the hyperparameter constraining the maximum $L_\infty$ perturbation magnitude ($\|x_{\text{adv}} - x\|_\infty \le \epsilon$).
 
-<div align="center">
-  <img src="../images/fig3_ilustrasi_fgsm.png" alt="Illustration of Fast Gradient Sign Method (FGSM)" width="850">
-  <p><em>Figure 1 (Fig. 3 in JEEEMI): Illustration of the Single-Step Fast Gradient Sign Method (FGSM) Pipeline.</em></p>
-</div>
+![Illustration of Fast Gradient Sign Method (FGSM)](../images/fig3_ilustrasi_fgsm.png){: .center width="850" }
+
+*Figure: Figure 1 (Fig. 3 in JEEEMI): Illustration of the Single-Step Fast Gradient Sign Method (FGSM) Pipeline.*
 
 !!! info "Spatial Characteristics of FGSM Noise (Edge Artifacts)"
     Due to its single-step nature, FGSM generates perturbations that correlate strongly with the raw gradient of the image structure. Rather than distributing randomly, the noise concentrates on high-frequency spatial features such as anatomical boundaries (rib cages and clavicles). These *"edge artifacts"* distort the structural integrity of the Region of Interest (ROI).
@@ -48,10 +47,9 @@ where:
 - $\alpha$ is the per-step size,
 - $\Pi_{x + S}(\cdot)$ denotes the projection operator that clips the perturbed image back into the feasible $\epsilon$-neighborhood $S = \{x' : \|x' - x\|_\infty \le \epsilon\}$ and valid pixel range $[0, 1]$.
 
-<div align="center">
-  <img src="../images/fig4_ilustrasi_pgd.png" alt="Illustration of Projected Gradient Descent (PGD)" width="850">
-  <p><em>Figure 2 (Fig. 4 in JEEEMI): Illustration of Iterative Projected Gradient Descent (PGD) Optimization with $\epsilon$-Ball Projection.</em></p>
-</div>
+![Illustration of Projected Gradient Descent (PGD)](../images/fig4_ilustrasi_pgd.png){: .center width="850" }
+
+*Figure: Figure 2 (Fig. 4 in JEEEMI): Illustration of Iterative Projected Gradient Descent (PGD) Optimization with $\epsilon$-Ball Projection.*
 
 ### Mathematical Guarantee of Spatial Coverage ($\alpha = \epsilon/4, N = 10$)
 
