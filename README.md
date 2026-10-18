@@ -546,6 +546,7 @@ covid19-xray-adversarial-attack/
 │       └── tags.md
 ├── .gitattributes                      # Git LFS tracking for model checkpoints (*.pth)
 ├── .gitignore                          # Git ignore rules for build artifacts and caches
+├── LICENSE                             # Dual License (MIT + CC BY-SA 4.0) & Clinical Disclaimer
 ├── requirements.txt                    # Core Deep Learning & research Python dependencies
 └── README.md                           # Main repository documentation
 ```
@@ -644,5 +645,8 @@ If you find this research, codebase, or experimental analysis useful in your wor
 
 ### 11.3 License
 
-- **Journal Article:** Published open-access under the *Creative Commons Attribution-ShareAlike 4.0 International License* ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)).
-- **Source Code & Documentation:** Released under the **MIT License** for academic and research use.
+This repository is protected under a dual-licensing framework (see [`LICENSE`](LICENSE) for full legal terms):
+
+- **Source Code & Software ([MIT License](LICENSE)):** Copyright (c) 2026 Muhammad Hisyam Kamil, Elga Putri Tri Farma, and Setio Basuki. Requires preservation of copyright and attribution notices and provides strict *"AS IS"* no-warranty / no-liability protection for the authors.
+- **Journal Article, Figures & Documentation ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):** Requires explicit attribution to the authors and official DOI (`10.35882/jeeemi.v8i2.1506`) and mandates that any derivative works of the paper, figures, or documentation be shared under the same license.
+- **Medical & Clinical Disclaimer:** Provided strictly for academic AI security research; not intended or certified for autonomous clinical diagnosis.
